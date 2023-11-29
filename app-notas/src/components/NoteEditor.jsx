@@ -15,13 +15,22 @@ function NoteEditor({ onAddNote }) {
   };
 
   return (
-    <div>
-      <h2>Añadir Nota</h2>
-      <textarea
-        value={newNote}
-        onChange={(e) => setNewNote(e.target.value)}
-      />
-      <button onClick={handleAddNote}>Add Note</button>
+    <div className="card">
+      <div className="card-body">
+        <h2 className="card-title">Añadir Nota</h2>
+        <textarea
+          className="form-control mb-2"
+          rows="3"
+          value={newNote}
+          onChange={(e) => setNewNote(e.target.value)}
+        />
+        <button
+          className="btn btn-primary"
+          onClick={handleAddNote}
+        >
+          Add Note
+        </button>
+      </div>
     </div>
   );
 }

@@ -1,0 +1,6 @@
+
+.cubo{
+    text-align: center;
+    min-height: 100vh;
+    background-image: linear-gradient(to right top, #845ec2, #a55dbd, #c15db5, #d95fab, #ec64a0, #f76e91, #fd7b84, #ff8a7a, #ffa26e, #ffbd66, #ffda65, #f9f871);
+}
