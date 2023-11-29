@@ -15,7 +15,7 @@ function NoteEditor({ onAddNote }) {
   };
 
   return (
-    <div className="card">
+    <div className="card bg-black text-white">
       <div className="card-body">
         <h2 className="card-title">Añadir Nota</h2>
         <textarea

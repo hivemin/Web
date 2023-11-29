@@ -2,7 +2,7 @@ import React from 'react';
 
 function Note({ note, onDeleteNote }) {
   return (
-    <div className="card mb-3 $theme-colors:{$blue-500}">
+    <div className="card mb-3 ">
       <div className="card-body">
         <p className="card-text">{note.content}</p>
         <button

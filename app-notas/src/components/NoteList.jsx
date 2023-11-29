@@ -3,7 +3,7 @@ import Note from './Note.jsx';
 
 function NoteList({ notes, onDeleteNote }) {
   return (
-    <div className="card">
+    <div className="card bg-black text-white">
       <div className="card-body">
         <h2 className="card-title">Notas</h2>
         {notes.map((note) => (
