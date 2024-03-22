@@ -1,13 +1,15 @@
 const mongoose = require("mongoose")
-const mongooseDelete =require("mongoose-delete")
+const mongooseDelete = require("mongoose-delete")
 
-const  CommerceSchema = new mongoose.Schema(
+// Definimos un esquema para el modelo Commerce
+const CommerceSchema = new mongoose.Schema(
     {
         name:{
             type: String
         },
         cif:{
-            type:String
+            type:String,
+            unique:true
         },
         address:{
             type:String
@@ -28,5 +30,7 @@ const  CommerceSchema = new mongoose.Schema(
         versionKey: false
     }
 )
+
 CommerceSchema.plugin(mongooseDelete, {overrideMethods: "all"})
-module.exports = mongoose.model("users", CommerceSchema)
+// Exporta el modelo Commerce creado a partir del esquema
+module.exports = mongoose.model('Commerce', CommerceSchema)
