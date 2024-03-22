@@ -1,17 +1,14 @@
-const { CommerceModel } = require('../models')
+const  CommerceModel  = require('../models/nosql/commerce')
 const { handleHttpError } = require('../utils/handleError')
 const { matchedData } = require('express-validator')
 
 const getItems = async (req, res) => {
 
     try {
-        let query = CommerceModel.find()
-        if (req.query.sortByCIF === 'asc') {
-            query = query.sort({cif: 1})
-        }
-        const data = await query.exec()
-        res.send(data)
+        return res.send(await CommerceModel.find({}))
+
     } catch (err) {
+        console.log(err)
         handleHttpError(res, 'ERROR_GET_ITEMS', 404) //Si nos sirve el de por defecto que hemos establecido, no es necesario pasar el 403
     }
 }
@@ -40,6 +37,9 @@ const createItem = async (req, res) => {
     }
 }
 const updateItem = async (req, res) => {
+
+    //return res.send(await CommerceModel.findOneAndUpdate({cif: req.params.cif}, req.body, {new: true}))
+
     try {
         const {cif, ...body} = matchedData(req)
         const updatedCommerce = await CommerceModel.findOneAndUpdate({cif: cif}, body, {new: true});
@@ -58,11 +58,10 @@ const deleteItem = async (req, res) => {
         let result;
 
         if (req.query.logical === 'true') {
-            result = await CommercesModel.findOneAndUpdate({ cif: cif }, { deleted: true }, { new: true });
+            result = await CommerceModel.findOneAndUpdate({ cif: cif }, { deleted: true }, { new: true });
         } else {
-            result = await CommercesModel.findOneAndDelete({ cif: cif });
+            result = await CommerceModel.findOneAndDelete({ cif: cif });
         }
-
         if (!result) {
             return handleHttpError(res, 'COMMERCE_NOT_FOUND', 404);
         }

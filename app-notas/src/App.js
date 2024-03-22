@@ -15,9 +15,10 @@ function App() {
   }, []);
 
   const handleAddNote = (newNote) => {
-    setNotes([...notes, newNote]);
-    localStorage.setItem('notes', JSON.stringify([...notes, newNote]));
-  };
+  setNotes([...notes, newNote]);
+  localStorage.setItem('notes', JSON.stringify([...notes, newNote]));
+};
+
 
   const handleDeleteNote = (id) => {
     const updatedNotes = notes.filter((note) => note.id !== id);

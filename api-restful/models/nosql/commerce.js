@@ -7,7 +7,8 @@ const  CommerceSchema = new mongoose.Schema(
             type: String
         },
         cif:{
-            type:String
+            type:String,
+            unique:true
         },
         address:{
             type:String
@@ -29,4 +30,4 @@ const  CommerceSchema = new mongoose.Schema(
     }
 )
 CommerceSchema.plugin(mongooseDelete, {overrideMethods: "all"})
-module.exports = mongoose.model("users", CommerceSchema)
+module.exports = mongoose.model("commerce", CommerceSchema)
