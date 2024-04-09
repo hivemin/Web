@@ -35,6 +35,9 @@ const createItem = async (req, res) => {
 
 //La verdad que no entiendo por qué no funciona el updateItem, cuando en teoría con el findOneAndUpdate debería de poder seleccionar el cif y actualizar el modelo asignado a ese cif
 const updateItem = async (req, res) => {
+
+    //return res.send(await CommerceModel.findOneAndUpdate({cif: req.params.cif}, req.body, {new: true}))
+
     try {
         const { cif } = req.params; // Obtiene el identificador único de los parámetros de la solicitud.
         const data = req.body; // Obtiene los datos del cuerpo de la solicitud.
