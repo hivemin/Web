@@ -1,32 +1,27 @@
 {
-  "name": "api-restful",
+  "name": "app-comercio",
   "version": "1.0.0",
   "description": "",
   "main": "app.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node_modules/.bin/nodemon app.js"
+    "start": "nodemon start"
   },
   "keywords": [],
-  "author": "oscar",
+  "author": "",
   "license": "ISC",
-  "devDependencies": {
-    "@slack/webhook": "^7.0.2",
+  "dependencies": {
+    "@slack/webhook": "^6.1.0",
     "bcryptjs": "^2.4.3",
     "cors": "^2.8.5",
-    "dotenv": "^16.4.5",
-    "express": "^4.19.1",
+    "dotenv": "^16.0.3",
+    "express": "^4.18.2",
     "express-validator": "^7.0.1",
-    "jsonwebtoken": "^9.0.2",
-    "mongoose": "^8.2.3",
-    "mongoose-delete": "^1.0.2",
+    "jsonwebtoken": "^9.0.0",
+    "mongoose": "^8.3.4",
     "morgan-body": "^2.6.9",
     "multer": "^1.4.5-lts.1",
-    "mysql2": "^3.9.2",
-    "nodemon": "^3.1.0",
-    "sequelize": "^6.37.1"
-  },
-  "dependencies": {
-    "mongodb": "^6.5.0"
+    "nodemon": "^2.0.22",
+    "sequelize": "^6.31.1"
   }
 }

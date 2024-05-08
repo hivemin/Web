@@ -1,8 +1,8 @@
 const express = require('express');
 const cors = require('cors');
 const dbConnect = require('./config/mongo')
-const swaggerUi = require("swagger-ui-express")
-const swaggerSpecs = require("./docs/swagger")
+//const swaggerUi = require("swagger-ui-express")
+//const swaggerSpecs = require("./docs/swagger")
 require('dotenv').config();
 
 const app = express();
@@ -10,14 +10,6 @@ const app = express();
 const morganBody = require("morgan-body")
 const {IncomingWebhook} = require("@slack/webhook")
 
-const { sequelize, dbConnectMySql } = require("./config/mysql")
-if (process.env.ENGINE_DB === 'nosql'){
-    dbConnect()
-    // Crea las colecciones por defecto si no existieran
-}else{
-    dbConnectMySql()
-    sequelize.sync() // Crea las tablas en la base de datos si no existieran
-}
 
 
 const loggerStream = require("./utils/handleLogger")
@@ -38,7 +30,7 @@ dbConnect()
 
 const port = process.env.PORT || 3000;
 
-app.use("/api-docs", swaggerUi.serve, swaggerUi.setup(swaggerSpecs))
+// app.use("/api-docs", swaggerUi.serve, swaggerUi.setup(swaggerSpecs))
 app.use("/api", require("./routes")) //Lee routes/
 app.listen(port, () => {
     console.log(`Server is running on port: ${port}`);
