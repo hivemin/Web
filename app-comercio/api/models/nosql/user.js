@@ -1,5 +1,5 @@
 const mongoose = require("mongoose")
-//const mongooseDelete = require("mongoose-delete")
+const mongooseDelete = require("mongoose-delete")
 
 const UserScheme = new mongoose.Schema(
     {
@@ -28,12 +28,12 @@ const UserScheme = new mongoose.Schema(
         },
         role:{
             type: String,
-            enum: ["user", "admin"], // es como el enum de SQL
+            enum: ["user", "admin"],
             default: "user"
         }
     },
     {
-        timestamp: true, // TODO createdAt, updatedAt
+        timestamp: true,
         versionKey: false
     }
 )

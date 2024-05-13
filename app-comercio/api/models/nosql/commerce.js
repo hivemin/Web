@@ -21,7 +21,8 @@ const  CommerceSchema = new mongoose.Schema(
             type:String
         },
         idPage:{
-            type:Number
+            type:Number,
+            unique:true
         }
     },
     {
