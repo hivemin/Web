@@ -57,10 +57,4 @@ const deleteItem = async (req, res) => {
         handleHttpError(res, 'ERROR_DELETE_USER');
     }
 }
-module.exports = {
-    getItems,
-    getItem,
-    createItem,
-    updateItem,
-    deleteItem
-}
+module.exports = {getItems, getItem, createItem, updateItem, deleteItem}

@@ -1,14 +1,17 @@
 const  CommerceModel  = require('../models'); // Importa el modelo de Mongoose para el comercio.
 const { handleHttpError } = require('../utils/handleError'); // Importa la función para manejar errores HTTP.
 const { matchedData } = require('express-validator'); // Importa la función para obtener datos coincidentes de las validaciones de Express.
-
-const getItems = async (req, res) => {
-    try {
-        return res.send(await CommerceModel.find({})); // Busca y envía todos los elementos del modelo.
-    } catch (err) {
-        handleHttpError(res, 'ERROR_GET_ITEMS', 404);
+const { tokenSign } = require("../utils/handleJwt")
+const { encrypt } = require("../utils/handlePassword")
+const getItems = (req, res) => errorHandler(req, res, async () => {
+    let query = CommerceModel.find();
+    //esto es para filtrar el CIF  (ayuda de dario)
+    if (req.query.sortByCIF === 'asc') {
+        query = query.sort({ CIF: 1 });
     }
-};
+    const data = await query.exec();
+    res.send(data);
+});
 
 const getItem = async (req, res) => {
     try {
@@ -33,26 +36,16 @@ const createItem = async (req, res) => {
     }
 };
 
-//La verdad que no entiendo por qué no funciona el updateItem, cuando en teoría con el findOneAndUpdate debería de poder seleccionar el cif y actualizar el modelo asignado a ese cif
-const updateItem = async (req, res) => {
-
-    //return res.send(await CommerceModel.findOneAndUpdate({cif: req.params.cif}, req.body, {new: true}))
-
-    try {
-        const { cif } = req.params; // Obtiene el identificador único de los parámetros de la solicitud.
-        const data = req.body; // Obtiene los datos del cuerpo de la solicitud.
-        const updatedItem = await CommerceModel.findOneAndUpdate({ cif: cif }, {update: data}, { new: true }); // Busca y actualiza un elemento por su cif único.
-
-        if (!updatedItem) {
-            return handleHttpError(res, 'COMMERCE_NOT_FOUND', 404); // Si no se encuentra el elemento, envía un error 404.
-        }
-
-        res.send(updatedItem);
-    } catch (err) {
-        console.log(err);
-        handleHttpError(res, 'ERROR_UPDATE_ITEM');
+const updateItem = (req, res) => errorHandler(req, res, async () => {
+    const { CIF, ...body } = matchedData(req);
+    //busco el comercio a actualizar con el CIF
+    // console.log(CIF)
+    const updatedCommerce = await comercioModel.findOneAndUpdate({ CIF }, body, { new: true });
+    if (!updatedCommerce) {
+        return handleHttpError(res, 'COMMERCE_NOT_FOUND', 404);
     }
-};
+    res.send(updatedCommerce);
+});
 
 const deleteItem = async (req, res) => {
     try {

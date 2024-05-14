@@ -6,9 +6,8 @@ const propertiesKey = getProperties()
 const tokenSign = (user) => {
     const sign = jwt.sign(
         {
-            [propertiesKey.id]: user[propertiesKey.id],
-
-            email: user.email
+            email: user.email,
+            role: user.role
         },
         JWT_SECRET,
         {

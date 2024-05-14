@@ -12,17 +12,19 @@ const WebpageScheme = new mongoose.Schema(
         title: {
             type: String
         },
-        resume: {
+        summary: {
             type: String
         },
         reviews: {
             type: String
         },
-        texts: {
-            type: Array
-        },
-        photos: {
-            type: Array
+        image:{
+            url: {
+                type: String
+            },
+            filename: {
+                type: String
+            }
         },
         data: {
             Scoring: {

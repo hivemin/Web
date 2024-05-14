@@ -8,11 +8,9 @@ const UserScheme = new mongoose.Schema(
         },
         email: {
             type: String,
-            unique: true
         },
         password:{
             type: String,
-            select: false
         },
         age: {
             type: Number
@@ -24,7 +22,7 @@ const UserScheme = new mongoose.Schema(
             type: String
         },
         recOffers: {
-            enum: ["yes", "no"]
+            type: Boolean
         },
         role:{
             type: String,
