@@ -7,7 +7,6 @@ const {usersModel, commerceModel} = require("../models")
 const registerCtrl = async (req, res) => {
     try {
         req = matchedData(req)
-        console.log(req.name)
         const password = await encrypt(req.password)
         const body = {...req, password} // Con "..." duplicamos el objeto y le añadimos o sobreescribimos una propiedad
         const dataUser = await usersModel.create(body)
@@ -18,7 +17,6 @@ const registerCtrl = async (req, res) => {
         }
         res.send(data)
     }catch(err) {
-        console.log(err)
         handleHttpError(res, "ERROR_REGISTER_USER")
     }
 }
@@ -26,7 +24,12 @@ const registerCtrl = async (req, res) => {
 const loginCtrl = async (req, res) => {
     try {
         req = matchedData(req);
+        // console.log(req);
+
+        // Usar el método `findOne` de Mongoose correctamente.
         var user = await usersModel.findOne({ email: req.email });
+        // console.log(req.email);
+
         if (!user) {
             user = await commerceModel.findOne({ email: req.email });
             if (!user) {
@@ -34,26 +37,26 @@ const loginCtrl = async (req, res) => {
                 return;
             }
         }
-        console.log("contraseña = ", user.password)
-        console.log("contraseña2 = ", req.password)
+
         const hashPassword = user.password;
-        console.log("contraseña3 = ", hashPassword)
         const check = await compare(req.password, hashPassword);
+
         if (!check) {
             handleHttpError(res, "INVALID_PASSWORD", 401);
             return;
         }
-        user.set('password', undefined, {strict: false})
-        console.log(user)
+
+        user.password = undefined;
         const data = {
-            token: await tokenSign(user.pass),
-            user: user
-        }
-        res.send(data)
-    }
-    catch(err) {
-        console.log(err)
-        handleHttpError(res, "INVALID_PASSWORD", 401);
+            token: await tokenSign(user),
+            user
+        };
+
+        res.send(data);
+
+    } catch (err) {
+        console.log(err);
+        handleHttpError(res, "ERROR_LOGIN_USER");
     }
 }
 

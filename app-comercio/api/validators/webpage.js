@@ -20,6 +20,7 @@ const validatorCreateWebpage = [
     check("activity").exists().notEmpty(),
     check("title").exists().notEmpty(),
     check("summary").exists().notEmpty(),
+    check("title").exists().notEmpty(),
     (req, res, next) => {
         return validateResults(req, res, next)
     }

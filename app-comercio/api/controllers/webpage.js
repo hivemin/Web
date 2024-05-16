@@ -1,6 +1,6 @@
 const { matchedData } = require("express-validator")
 const { handleHttpError } = require("../utils/handleError")
-const  webpageModel = require("../models")
+const  webpageModel = require("../models/nosql/webpage")
 
 
 const getItem = async (req, res) => {
@@ -22,38 +22,73 @@ const getItems = async (req, res) => {
 
 const createComment = async (req, res) => {
     try {
-        const {id} = matchedData(req); // Obtiene el identificador único del cuerpo de la solicitud.
-        const {texto, score} = req.body; // Obtiene el texto y la puntuación del cuerpo de la solicitud.
-        const email_usuario = req.user.email; // Obtiene el correo electrónico del usuario autenticado.
-        const comentario = {texto: texto, email_usuario: email_usuario, score: score}; // Crea un objeto de comentario.
-        const webpage = await webpageModel.findById(_id); // Bus
-    }
-    catch (err) {
-        handleHttpError(res, 'ERROR_CREATE_COMMENT');
+        email = req.user.email
+        req = matchedData(req)
+        const comment = {
+            text: req.texto,
+            email_user: email,
+            score: req.score
+        }
+        const webPage = await webpageModel.findById(
+            req.id
+        )
+        // console.log(webPage)
+        num_puntuaciones = webPage.comments.length
+        let newScore
+        // console.log(webPage)
+        if(num_puntuaciones != 0){
+            newScore = ((webPage.scoring * num_puntuaciones) + req.score) / (num_puntuaciones+1)
+            // console.log(newScore)
+        }
+        else{
+            newScore = req.score
+        }
+        // console.log(newScore)
+        await webpageModel.findByIdAndUpdate(req.id, { $push: { comments: comment }, scoring: newScore })
+
+        res.send()
+
+    }catch(err) {
+        console.log(err)
+        handleHttpError(res, "ERROR_CREATE_COMMENT")
     }
 }
 const createWebpage = async (req, res) => {
     try {
-        const body = matchedData(req); // Obtiene los datos validados del cuerpo de la solicitud.
-        const data = await webpageModel.create(body); // Crea un nuevo elemento utilizando los datos del cuerpo de la solicitud.
-        res.send(data);
+        const user = req.user
+        var body = matchedData(req)
+        body.cif=user.cif
+        const data = await webpageModel.create(body)
+
+        res.send(data)
+
     } catch (err) {
-        handleHttpError(res, 'ERROR_CREATE_WEBPAGE');
+        console.log(err)
+        handleHttpError(res, "ERROR_CREATE_WEBPAGE")
     }
 }
 
 const updateWebpage = async (req, res) => {
     try {
-        const {id, ...body} = matchedData(req);
-        const updatedWebpage = await webpageModel.findOneAndUpdate({id}, body
-            , {new: true});
-        if (!updatedWebpage) {
-            return handleHttpError(res, 'WEBPAGE_NOT_FOUND', 404);
+        cif = req.user.CIF
+        const { id, ...body } = matchedData(req)
+
+        const page = await webpageModel.findById(id);
+
+        console.log(page)
+        if (page.CIF != cif) {
+            handleHttpError(res, "ERROR_NOT_PROPERTY")
+            return
         }
-        res.send(updatedWebpage);
-    }
-    catch (err) {
-        handleHttpError(res, 'ERROR_UPDATE_WEBPAGE');
+
+        const data = await webpageModel.findByIdAndUpdate(id, body, { new: true });
+
+
+        res.send(data)
+
+    } catch (err) {
+        console.log(err)
+        handleHttpError(res, "ERROR_UPDATE_WEBPAGE")
     }
 }
 const deleteWebpage = async (req, res) => {
@@ -83,30 +118,46 @@ const uploadImage = async (req, res) => {
 
 const getCity = async (req, res) => {
     try {
-        const {ciudad, scoring} = matchedData(req);
-        return res.send(await webpageModel.find({ciudad, scoring}));
-    }
-    catch (err) {
-        handleHttpError(res, 'ERROR_GET_CITY');
+        const { ciudad, scoring } = matchedData(req);
+        let queryOptions = { ciudad: ciudad };
+
+        if (scoring) {
+            // Use the sort method from Mongoose directly in the query
+            var data = await webpageModel.find(queryOptions).sort({ scoring: -1 });
+        } else {
+            var data = await webpageModel.find(queryOptions);
+        }
+
+        res.send(data);
+    } catch(err) {
+        console.log(err);
+        handleHttpError(res, "ERROR_GET_WEBPAGE_BY_CITY");
     }
 }
 
 const getCityAndActivity = async (req, res) => {
     try {
-        const {ciudad, actividad, scoring} = matchedData(req);
-        let data;
-        if (!scoring) {
-            data = await webpageModel.find({ciudad, actividad});
+        const {city, activity, scoring} = matchedData(req)
+        let data
+        if(!scoring){
+            data = await webpageModel.find({
+                city: city,
+                activity: activity
+            })
         }
-        else {
-            data = await webpageModel.find({ciudad, actividad}).sort({scoring: -1});
+        else{
+            data = await webpageModel.find({
+                city: city,
+                activity: activity
+            }).sort({ scoring: -1 });
         }
-        res.send(data);
-    }
-    catch (err) {
-        handleHttpError(res, 'ERROR_GET_CITY_AND_ACTIVITY');
+        res.send(data)
+    }catch(err) {
+        console.log(err)
+        handleHttpError(res, "ERROR_GET_WEBPAGE_BY_CITY_AND_ACTIVITY")
     }
 }
+
 
 
 

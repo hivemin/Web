@@ -1,20 +1,22 @@
-### Crear un usuario
+##hacerme swagger de modelos, rutas y controladores
+
+### Crear un usuario VVVVVVVVVVVVVVVV
 
 POST http://localhost:3000/api/auth/register
 Content-Type: application/json
 
 {
-  "name": "yo",
-  "email": "yo@gmail.com",
-  "password": "123456",
-  "age": 55,
+  "name": "enrique",
+  "email": "enrique@gmail.com",
+  "password": "pies56",
+  "age": 25,
   "city": "madrid",
   "interests": ["comida", "deporte"],
   "recOffers": "true",
-  "role": "admin"
+  "role": "user"
 }
 
-### login admin
+### login admin VVVVVVVVVVVVVVVVVV
 GET  http://localhost:3000/api/auth/login
 Content-Type: application/json
 
@@ -22,139 +24,125 @@ Content-Type: application/json
   "email": "yo@gmail.com",
   "password": "123456"
 }
-### login normal
+
+### login normal VVVVVVVVVVVVVVVVVVV
 GET  http://localhost:3000/api/auth/login
 Content-Type: application/json
 
 {
-  "email": "paco@gmail.com",
+  "email": "enrique@gmail.com",
+  "password": "pies56"
+}
+
+### modificar un usuario 
+
+PUT http://localhost:3000/api/user
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImVucmlxdWVAZ21haWwuY29tIiwicm9sZSI6InVzZXIiLCJpYXQiOjE3MTU4NjkyOTYsImV4cCI6MTcxNTg3NjQ5Nn0.axiGIAU5oddOySyARl-cYwdlqcbfhR8olBhiCEo4GWk
+Content-Type: application/json
+
+{
+  "name": "Paquito",
+  "age": 31,
+  "city": "Pozuelo",
+  "recOffers": "false"
+}
+
+### commerce con autorizacion VVVVVVVVVVVVVVVVVVV
+POST http://localhost:3000/api/commerce
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InlvQGdtYWlsLmNvbSIsInJvbGUiOiJhZG1pbiIsImlhdCI6MTcxNTg4NjYzMywiZXhwIjoxNzE1ODkzODMzfQ.3_dcFYJmT5Kqij43fmUV9WSZMCTZyZoCbDxrsKMvvcM
+Content-Type: application/json
+
+{
+  "email": "comercioprueba@gmail.com",
+  "name": "carrefour",
+  "cif": "77777777",
+  "address": "calle falsa 123",
+  "phone": "667788990",
+  "password": "123456"
+}
+### commerce sin autorizacion VVVVVVVVVVVVVVVVVV
+POST http://localhost:3000/api/commerce HTTP/1.1
+Content-Type: application/json
+
+{
+  "email": "jimmy@gmail.com",
+  "name": "dinero",
+  "cif": "121212121",
+  "address": "aquel lugar",
+  "phone": "987654321",
+  "password": "121212121"
+}
+
+### todo el listado de commerces, sin iniciar sesion VVVVVVVVVVVVVVV
+GET http://localhost:3000/api/commerce HTTP/1.1
+
+### logIn de commerce VVVVVVVVVVVVVV
+GET  http://localhost:3000/api/auth/login
+Content-Type: application/json
+
+{
+  "email": "comercioprueba@gmail.com",
   "password": "123456"
 }
 
-###
-//modificar un usuario
-
-PUT http://localhost:3000/api/usuario
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InVzdWFyaW9AZ21haWwuY29tIiwicm9sIjoidXN1YXJpbyIsImlhdCI6MTcxNTMzNjA2MSwiZXhwIjoxNzE1MzQzMjYxfQ.0t5iR84eF413AD-l2ne8cFzyWYSmrFj45U9PQXPWmtM
+### update de un commerce VVVVVVVVVVVVVV
+PUT http://localhost:3000/api/commerce/121212121 HTTP/1.1
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InlvQGdtYWlsLmNvbSIsInJvbGUiOiJhZG1pbiIsImlhdCI6MTcxNTg3NzQ4MywiZXhwIjoxNzE1ODg0NjgzfQ.uq3YjqcRL261juN7jLQMtDnmRQS_XRbykPu8eFuNO4w
 Content-Type: application/json
 
 {
-  "nombre": "Paquito",
-  "edad": 31,
-  "ciudad": "Pozuelo",
-  "permite_recibir_ofertas": false
-}
-
-### comercio con autorizacion
-POST http://localhost:3000/api/comercio
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImpvcmdlQGdtYWlsLmNvbSIsInJvbCI6ImFkbWluIiwiaWF0IjoxNzE1MzMzMzY5LCJleHAiOjE3MTUzNDA1Njl9.S4yoEaTUfpDCSWVdOMK10CvwdKNW7goR48LQr7arPCg
-Content-Type: application/json
-
-{
-  "email": "examen1@gmail.com",
-  "password": "123477",
-  "nombre": "ex",
-  "CIF": "123341231",
-  "direccion": "ese sitio",
-  "telefono": "5678902123"
-}
-###
-POST http://localhost:3000/api/comercio
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImpvcmdlQGdtYWlsLmNvbSIsInJvbCI6ImFkbWluIiwiaWF0IjoxNzE1MzMzMzY5LCJleHAiOjE3MTUzNDA1Njl9.S4yoEaTUfpDCSWVdOMK10CvwdKNW7goR48LQr7arPCg
-Content-Type: application/json
-
-{
-  "email": "btc@gmail.com",
-  "password": "dinerodinero",
-  "nombre": "dinero",
-  "CIF": "123456",
-  "direccion": "aquel lugar",
-  "telefono": "987654321"
-}
-
-### comercio sin autorizacion
-POST http://localhost:3000/api/comercio HTTP/1.1
-Content-Type: application/json
-
-{
-  "nombre": "AAAAAAAA",
-  "CIF": "5678",
-  "direccion": "aaaaaaa",
-  "email": "aaa@gmail.com",
-  "telefono": "61934339",
-  "id_pagina": 2
-}
-
-### todo el listado de comercios, sin iniciar sesion
-GET http://localhost:3000/api/comercio HTTP/1.1
-
-### update de un comercio
-PUT http://localhost:3000/api/comercio/123456 HTTP/1.1
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImpvcmdlQGdtYWlsLmNvbSIsInJvbCI6ImFkbWluIiwiaWF0IjoxNzE1MzMyMTAyLCJleHAiOjE3MTUzMzkzMDJ9.uywucW72BR8bfAL4V1kWVwGuNr5qmIPT_H2k4ao7td4
-Content-Type: application/json
-
-{
-  "nombre": "holdersUnited upd",
-  "CIF": "123456",
-  "direccion": "btcAvenue",
+  "name": "holdersUnited upd",
+  "cif": "123456",
+  "address": "btcAvenue",
   "email": "holders@gmail.com",
-  "telefono": "61934358",
+  "phone": "61934358",
   "password": "password"
 }
 
-### borrado logico
-# DELETE http://localhost:3000/api/comercio/1234?logical=true HTTP/1.1
+### borrado logico VVVVVVVVVVVVV
+DELETE http://localhost:3000/api/commerce/121212121?logical=true HTTP/1.1
 
 
-### borrado de un comercio
-DELETE http://localhost:3000/api/comercio/123456?logical=false HTTP/1.1
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImpvcmdlQGdtYWlsLmNvbSIsInJvbCI6ImFkbWluIiwiaWF0IjoxNzE1MjkxNTIxLCJleHAiOjE3MTUyOTg3MjF9.LqWlXHit1RGvZ2ioAVhnYyYOLh7SJ85E0jkJQfOtBQs
+### borrado de un commerce VVVVVVVVVVV
+DELETE http://localhost:3000/api/commerce/121212121?logical=false HTTP/1.1
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InlvQGdtYWlsLmNvbSIsInJvbGUiOiJhZG1pbiIsImlhdCI6MTcxNTg3NzQ4MywiZXhwIjoxNzE1ODg0NjgzfQ.uq3YjqcRL261juN7jLQMtDnmRQS_XRbykPu8eFuNO4w
 
-### logIn de comercio
-GET  http://localhost:3000/api/auth/login
+
+
+
+
+### Crear pagina VVVVVVVVVVVVVVVV
+POST http://localhost:3000/api/webpage HTTP/1.1
 Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImNvbWVyY2lvcHJ1ZWJhQGdtYWlsLmNvbSIsInJvbGUiOiJjb21tZXJjZSIsImlhdCI6MTcxNTg4NjY5NCwiZXhwIjoxNzE1ODkzODk0fQ.VDYVo-rw7Ae1Kxh1rDFBs_4WxEEe88-cID8ddxy8cYU
 
 {
-  "email": "examen1@gmail.com",
-  "password": "123477"
-}
-
-
-
-### Crear pagina
-POST http://localhost:3000/api/pagina HTTP/1.1
-Content-Type: application/json
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImV4YW1lbjFAZ21haWwuY29tIiwicm9sIjoiY29tZXJjaW8iLCJpYXQiOjE3MTU2MTc2MzgsImV4cCI6MTcxNTYyNDgzOH0.BlD1-hQw_62Vr8Ks_dbcql2gb4YinDIZUoea7sRXeCU
-
-{
-  "titulo": "pagina2",
-  "ciudad": "madrid",
-  "resumen": "pagina1",
-  "texto": "Lorem ipsum dolor sit amet",
-  "imagen": ["img.png", "img.png"],
+  "title": "pagina2",
+  "city": "madrid",
+  "summary": "pagina1",
+  "text": "Lorem ipsum dolor sit amet",
   "scoring": 2,
   "numRatings": 1,
   "review": "muy buena, 10/10",
-  "actividad": "mucha"
+  "activity": "mucha"
 }
 
-###
-//editar la info de una pagina
-PUT http://localhost:3000/api/pagina/663d9cfb28731862985522cc
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImNvbWVyY2lvQGdtYWlsLmNvbSIsInJvbCI6ImNvbWVyY2lvIiwiaWF0IjoxNzE1MzEzMDM4LCJleHAiOjE3MTUzMjAyMzh9.AqoY2k0KjU2R90EFslR8nwMsVY-1ccYh7kmR9xlMavA
+### Editar pagina VVVVVVVVVVVVV
+
+PUT http://localhost:3000/api/webpage/66465386618addb5ac1ac8b1
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImV4YW1lbjFAZ21haWwuY29tIiwicm9sZSI6ImNvbW1lcmNlIiwiaWF0IjoxNzE1ODg0OTEzLCJleHAiOjE3MTU4OTIxMTN9.6sVXcNRbWD05UuhaFphn73Ci79kS7DVs1f9JOzcA5dk
 Content-Type: application/json
 
 {
-  "ciudad": "Pozuelo",
-  "actividad": "Restaurantes",
-  "titulo": "comida5",
-  "resumen": "rbevdrgaergverfv",
+  "city": "Pozuelo",
+  "activity": "Restaurantes",
+  "title": "comida5",
+  "summary": "rbevdrgaergverfv",
   "email": "1@gmail.com"
 }
-
-### subir imagenes a la pagina
-POST http://localhost:3000/api/pagina/imagen HTTP/1.1
-Authorization: Bearer  eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImV4YW1lbjFAZ21haWwuY29tIiwicm9sIjoiY29tZXJjaW8iLCJpYXQiOjE3MTU2MTc2MzgsImV4cCI6MTcxNTYyNDgzOH0.BlD1-hQw_62Vr8Ks_dbcql2gb4YinDIZUoea7sRXeCU
+### Subir imagenes a la pagina VVVVVVVVVVVVVV
+POST http://localhost:3000/api/webpage/image HTTP/1.1
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImNvbWVyY2lvcHJ1ZWJhQGdtYWlsLmNvbSIsInJvbGUiOiJjb21tZXJjZSIsImlhdCI6MTcxNTg4NjY5NCwiZXhwIjoxNzE1ODkzODk0fQ.VDYVo-rw7Ae1Kxh1rDFBs_4WxEEe88-cID8ddxy8cYU
 Content-Type: multipart/form-data; boundary=Boundry
 
 --Boundry
@@ -165,30 +153,31 @@ Content-Type: image/jpg
 --Boundry--
 
 
-### subir comentario
-POST http://localhost:3000/api/pagina/comentario/664243049367a433331fc70f
-Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InVzdWFyaW9AZ21haWwuY29tIiwicm9sIjoidXN1YXJpbyIsImlhdCI6MTcxNTYxMzkwMSwiZXhwIjoxNzE1NjIxMTAxfQ.0BLiioc-mDQxavrNS1eS-IfMWydJt0OjOKkUt7aNEac
+### subir comentario VVVVVVVVVVVVVVV
+POST http://localhost:3000/api/webpage/comment/66465386618addb5ac1ac8b1
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImVucmlxdWVAZ21haWwuY29tIiwicm9sZSI6InVzZXIiLCJpYXQiOjE3MTU4ODcxMDYsImV4cCI6MTcxNTg5NDMwNn0.b3sFuUItdIhyp33kK7rijyfIwRfBq1lvZ-nmszO33pE
 Content-Type: application/json
 
 {
   "score": 3,
-  "texto": "normalita"
+  "text": "normalita",
+  "email_user": "jotita@gmail.com"
 }
 
-### lista con todas las paginas
-GET http://localhost:3000/api/pagina
+### lista con todas las paginas VVVVVVVVVVVVVV
+GET http://localhost:3000/api/webpage
 
 ### encontrar pagina por ID
-GET http://localhost:3000/api/pagina/664243049367a433331fc70f
+GET http://localhost:3000/api/webpage/66465386618addb5ac1ac8b1
+
+### encontrar pagina por ciudad VVVVVVVVVVVVV
+GET http://localhost:3000/api/webpage/madrid/true
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InlvQGdtYWlsLmNvbSIsInJvbGUiOiJhZG1pbiIsImlhdCI6MTcxNTg4NTgxOSwiZXhwIjoxNzE1ODkzMDE5fQ.MWpmkpBHQsW-tGpftEJS4yFCK7I6lMovD9fMASJJl5k
 
 ### encontrar pagina por ciudad
-GET http://localhost:3000/api/pagina/madrid/true
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InVzdWFyaW9AZ21haWwuY29tIiwicm9sIjoidXN1YXJpbyIsImlhdCI6MTcxNTYxMzkwMSwiZXhwIjoxNzE1NjIxMTAxfQ.0BLiioc-mDQxavrNS1eS-IfMWydJt0OjOKkUt7aNEac
-
-### encontrar pagina por ciudad
-GET http://localhost:3000/api/pagina/madrid/true/mucha
+GET http://localhost:3000/api/webpage/madrid/true/mucha
 Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InVzdWFyaW9AZ21haWwuY29tIiwicm9sIjoidXN1YXJpbyIsImlhdCI6MTcxNTYxMzkwMSwiZXhwIjoxNzE1NjIxMTAxfQ.0BLiioc-mDQxavrNS1eS-IfMWydJt0OjOKkUt7aNEac
 
 ###eliminar pagina
-DELETE http://localhost:3000/api/pagina/663d9cfb28731862985522cc
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImNvbWVyY2lvQGdtYWlsLmNvbSIsInJvbCI6ImNvbWVyY2lvIiwiaWF0IjoxNzE1MzE0OTQzLCJleHAiOjE3MTUzMjIxNDN9.O1Rvj3xLUCYSHk5tFLOeS0f2wRwi_4SFa-XF0YlgLbU
+DELETE http://localhost:3000/api/webpage/66465aa2e5e7ea5dbd412e57
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InlvQGdtYWlsLmNvbSIsInJvbGUiOiJhZG1pbiIsImlhdCI6MTcxNTg4ODMxMCwiZXhwIjoxNzE1ODk1NTEwfQ.yuTveVZGZjsXaEF7aP4_0OeXTxDE0xc0aVZM70qvrXU

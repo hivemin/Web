@@ -20,10 +20,14 @@ const  CommerceSchema = new mongoose.Schema(
         phone:{
             type:String
         },
-        idPage:{
-            type:Number,
-            unique:true
-        }
+        password:{
+            type:String
+        },
+        role:{
+            type:String,
+            values:["commerce"],
+            default:"commerce"
+        },
     },
     {
         timestamp: true,

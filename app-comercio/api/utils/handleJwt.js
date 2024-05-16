@@ -1,9 +1,11 @@
 const jwt = require("jsonwebtoken")
+require("dotenv").config()
 const JWT_SECRET = process.env.JWT_SECRET
 const getProperties = require("../utils/handlePropertiesEngine")
 const propertiesKey = getProperties()
 
 const tokenSign = (user) => {
+    console.log(JWT_SECRET)
     const sign = jwt.sign(
         {
             email: user.email,
@@ -17,7 +19,7 @@ const tokenSign = (user) => {
     return sign
 }
 
-const verifyToken = (tokenJwt) => {
+const verifyToken = async (tokenJwt) => {
     try {
         return jwt.verify(tokenJwt, JWT_SECRET)
     }catch(err) {

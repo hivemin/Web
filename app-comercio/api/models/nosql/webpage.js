@@ -1,24 +1,33 @@
-const mongoose = require("mongoose")
 const mongooseDelete = require("mongoose-delete")
+const mongoose = require("mongoose")
 
-const WebpageScheme = new mongoose.Schema(
+const webPageSchema = new mongoose.Schema(
     {
-        city: {
-            type: String
-        },
-        acitvity: {
-            type: String
-        },
         title: {
-            type: String
+            type: String,
         },
+        user: {
+            type: Array,
+            mail: String
+        },
+        city: {
+            type: String,
+        },
+        activity: {
+            type: String,
+        }
+        ,
         summary: {
-            type: String
+            type: String,
         },
-        reviews: {
-            type: String
+        review: {
+            type: String,
         },
-        image:{
+        scoring: {
+            type: Number,
+            default: 0
+        },
+        image: {
             url: {
                 type: String
             },
@@ -26,24 +35,24 @@ const WebpageScheme = new mongoose.Schema(
                 type: String
             }
         },
-        data: {
-            Scoring: {
-                type: Number,
-                default: 0
+        comments: {
+            type: Array,
+            Schema: {
+                text: String,
+                score: Number,
+                email_user:String
             },
-            numRatings: {
-                type: Number,
-                default: 0
-            },
-            reviews: {
-                type: Array
-            }
+            default: []
         },
+        CIF: {
+            type: String
+        }
     },
     {
-        timestamp: true,
-        versionKey: false
+        timestamps: false
     }
 )
-//UserScheme.plugin(mongooseDelete, {overrideMethods: "all"})
-module.exports = mongoose.model("webpage", WebpageScheme) // Nombre de la colección (o de la tabla en SQL)
+
+
+webPageSchema.plugin(mongooseDelete, { overrideMethods: "all" })
+module.exports = mongoose.model("webpage", webPageSchema)

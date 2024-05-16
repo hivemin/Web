@@ -14,7 +14,8 @@ const validatorGetItem = [
 const validatorUpdateItem = [
     check("id").exists().notEmpty().isMongoId(),
     check("name").optional().notEmpty(),
-    check("email").optional().notEmpty().isEmail(),
+    check("password").optional().notEmpty().isLength({ min: 6 }),
+    check("age").optional().notEmpty().isNumeric(),
     (req, res, next) => validateResults(req, res, next)
 ]
 const validatorDeleteItem = [

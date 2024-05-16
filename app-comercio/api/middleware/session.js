@@ -1,7 +1,7 @@
-
 const { handleHttpError } = require("../utils/handleError")
 const { verifyToken } = require("../utils/handleJwt")
-const { usersModel } = require("../models")
+const  usersModel  = require("../models/nosql/user")
+const  commerceModel  = require("../models/nosql/commerce")
 const getProperties = require("../utils/handlePropertiesEngine")
 const propertiesKey = getProperties()
 
@@ -13,31 +13,39 @@ const authMiddleware = async (req, res, next) => {
             return
         }
 
-        // Nos llega la palabra reservada Bearer (es un estándar) y el Token, así que me quedo con la última parte
         const token = req.headers.authorization.split(' ').pop()
-        //Del token, miramos en Payload (revisar verifyToken de utils/handleJwt)
         const dataToken = await verifyToken(token)
-        if(!dataToken._id) {
-            handleHttpError(res, "ERROR_ID_TOKEN", 401)
-            return
-        }
 
-        if(!dataToken){ //Eliminamos el dataToken._id
+        if(!dataToken){
             handleHttpError(res, "NOT_PAYLOAD_DATA", 401)
             return
         }
-        const query = {
-            // _id o id
-            [propertiesKey.id]: dataToken[propertiesKey.id]
+
+        const user = await usersModel.findOne({
+            email: dataToken.email
+        })
+
+        req.user = user
+
+        if(!user){
+
+            const user = await commerceModel.findOne({
+                email: dataToken.email
+            })
+            req.user = user
+            console.log(dataToken)
+            if(!user){
+                handleHttpError(res, "USER_NOT_EXIST", 401)
+                return
+            }
         }
-        //const user = await usersModel.findById(dataToken._id) // findById solo para Mongoose
-        const user = await usersModel.findOne(query) // findOne válido para Mongoose y Sequelize
-        req.user = user // Inyecto al user en la petición
+        // console.log(user)
         next()
 
-
     }catch(err){
+        console.log(err)
         handleHttpError(res, "NOT_SESSION", 401)
+        return
     }
 }
 module.exports = authMiddleware
