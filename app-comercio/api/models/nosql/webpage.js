@@ -44,7 +44,7 @@ const webPageSchema = new mongoose.Schema(
             },
             default: []
         },
-        CIF: {
+        cif: {
             type: String
         }
     },

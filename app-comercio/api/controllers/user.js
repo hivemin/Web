@@ -28,6 +28,7 @@ const createItem = async (req, res) => {
         const data = await userModel.create(body); // Crea un nuevo elemento utilizando los datos del cuerpo de la solicitud.
         res.send(data);
     } catch (err) {
+        console.log(err);
         handleHttpError(res, 'ERROR_CREATE_ITEMS');
     }
 }

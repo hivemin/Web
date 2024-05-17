@@ -6,9 +6,10 @@ const  webpageModel = require("../models/nosql/webpage")
 const getItem = async (req, res) => {
     try {
         const {id} = matchedData(req);
-        return res.send(await webpageModel.findById(_id)); // Busca y envía el elemento del modelo con el id especificado.
+        return res.send(await webpageModel.findById(id)); // Busca y envía el elemento del modelo con el id especificado.
     }
     catch (err) {
+        console.log(err)
         handleHttpError(res, 'ERROR_GET_WEBPAGE', 404);
     }
 }
@@ -25,7 +26,7 @@ const createComment = async (req, res) => {
         email = req.user.email
         req = matchedData(req)
         const comment = {
-            text: req.texto,
+            text: req.text,
             email_user: email,
             score: req.score
         }
@@ -70,13 +71,13 @@ const createWebpage = async (req, res) => {
 
 const updateWebpage = async (req, res) => {
     try {
-        cif = req.user.CIF
+        cif = req.user.cif
         const { id, ...body } = matchedData(req)
 
         const page = await webpageModel.findById(id);
 
         console.log(page)
-        if (page.CIF != cif) {
+        if (page.cif != cif) {
             handleHttpError(res, "ERROR_NOT_PROPERTY")
             return
         }
@@ -96,8 +97,10 @@ const deleteWebpage = async (req, res) => {
         const { id } = matchedData(req);
         let result;
         result = await webpageModel.findByIdAndDelete(id);
+        console.log(result)
         res.send(result);
     } catch (err) {
+        console.log(err);
         handleHttpError(res, 'ERROR_DELETE_WEBPAGE');
     }
 }

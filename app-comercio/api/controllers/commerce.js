@@ -4,12 +4,21 @@ const { matchedData } = require('express-validator'); // Importa la función par
 const { tokenSign } = require("../utils/handleJwt")
 const { encrypt } = require("../utils/handlePassword")
 const getItems = async (req, res) => {
-    try {
-        const data = await commerceModel.find(); // Busca todos los elementos en la base de datos.
-        res.send(data);
-    } catch (err) {
-        handleHttpError(res, 'ERROR_GET_ITEMS');
+    let query = commerceModel.find();
+
+    // Filtrar el CIF según la petición
+    if (req.query.sortByCIF === 'asc') {
+        query = query.sort({ CIF: 1 });
     }
+
+    // Comprobar el rol del usuario
+    if (req.user.role !== 'admin') {
+        // Excluir el campo CIF para usuarios que no son admin
+        query = query.select('-cif -_id -rol -deleted -password');
+    }
+    const data = await query.exec();
+    console.log(req.user.role);
+    res.send(data);
 }
 
 const getItem = async (req, res) => {

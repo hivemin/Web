@@ -5,6 +5,11 @@ const validatorCreateItem = [
     check("name").exists().notEmpty(),
     check("email").exists().notEmpty().isEmail(),
     check("password").exists().notEmpty().isLength({ min: 6 }),
+    check("age").exists().notEmpty().isNumeric(),
+    check("city").exists().notEmpty(),
+    check("interests").exists().notEmpty(),
+    check("recOffers").exists().notEmpty().isBoolean(),
+    check("role").exists().notEmpty().isIn(["user", "admin"]),
     (req, res, next) => validateResults(req, res, next)
 ]
 const validatorGetItem = [
