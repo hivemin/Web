@@ -1,6 +1,7 @@
 const { handleHttpError } = require("../utils/handleError")
 const checkRol = (roles) => (req, res, next) => { // Doble argumento
     try{
+        console.log(req)
         const {user} = req
         const userRol = user.role
         console.log(userRol)

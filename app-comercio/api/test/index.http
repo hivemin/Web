@@ -1,6 +1,4 @@
-##hacerme swagger de modelos, rutas y controladores
-
-### Crear un usuario VVVVVVVVVVVVVVVV
+### Crear un usuario
 
 POST http://localhost:3000/api/auth/register
 Content-Type: application/json
@@ -16,8 +14,8 @@ Content-Type: application/json
   "role": "user"
 }
 
-### login admin VVVVVVVVVVVVVVVVVV
-GET  http://localhost:3000/api/auth/login
+### login admin
+POST  http://localhost:3000/api/auth/login
 Content-Type: application/json
 
 {
@@ -26,8 +24,9 @@ Content-Type: application/json
 }
 > {% client.global.set("tokenAdmin", response.body.token) %}
 
-### login normal VVVVVVVVVVVVVVVVVVV
-GET  http://localhost:3000/api/auth/login
+### login normal
+POST
+    http://localhost:3000/api/auth/login
 Content-Type: application/json
 
 {
@@ -49,7 +48,7 @@ Content-Type: application/json
   "recOffers": "false"
 }
 
-### commerce con autorizacion VVVVVVVVVVVVVVVVVVV
+### commerce con autorizacion
 POST http://localhost:3000/api/commerce
 Authorization: Bearer {{tokenAdmin}}
 Content-Type: application/json
@@ -57,12 +56,12 @@ Content-Type: application/json
 {
   "email": "boling@gmail.com",
   "name": "boling",
-  "cif": "99900998",
+  "cif": "9990998",
   "address": "calle falsa 72",
   "phone": "667788990",
   "password": "123456"
 }
-### commerce sin autorizacion VVVVVVVVVVVVVVVVVV
+### commerce sin autorizacion
 POST http://localhost:3000/api/commerce HTTP/1.1
 Content-Type: application/json
 
@@ -75,20 +74,20 @@ Content-Type: application/json
   "password": "121212121"
 }
 
-### todo el listado de commerces, sin iniciar sesion VVVVVVVVVVVVVVV
+### todo el listado de commerces, sin iniciar sesion con token de admin
 GET http://localhost:3000/api/commerce HTTP/1.1
 
-### logIn de commerce VVVVVVVVVVVVVV
-GET  http://localhost:3000/api/auth/login
+### logIn de commerce
+POST  http://localhost:3000/api/auth/login
 Content-Type: application/json
 
 {
-  "email": "comercioprueba@gmail.com",
+  "email": "boling@gmail.com",
   "password": "123456"
 }
 > {% client.global.set("tokenCommerce", response.body.token) %}
 
-### update de un commerce VVVVVVVVVVVVVV
+### update de un commerce
 PUT http://localhost:3000/api/commerce/121212121 HTTP/1.1
 Authorization: Bearer {{tokenCommerce}}
 Content-Type: application/json
@@ -101,19 +100,20 @@ Content-Type: application/json
   "phone": "61934358",
   "password": "password"
 }
+> {% client.global.set("tokenUser", response.body.token) %}
 
-### borrado logico VVVVVVVVVVVVV
+### borrado logico
 DELETE http://localhost:3000/api/commerce/121212121?logical=true HTTP/1.1
 
 
-### borrado de un commerce VVVVVVVVVVV
+### borrado de un commerce
 DELETE http://localhost:3000/api/commerce/121212121?logical=false HTTP/1.1
 Authorization: Bearer {{tokenCommerce}}
 
 
 
 
-### Crear pagina VVVVVVVVVVVVVVVV
+### Crear pagina
 POST http://localhost:3000/api/webpage HTTP/1.1
 Content-Type: application/json
 Authorization: Bearer {{tokenCommerce}}
@@ -129,7 +129,7 @@ Authorization: Bearer {{tokenCommerce}}
   "activity": "mucha"
 }
 
-### Editar pagina VVVVVVVVVVVVV
+### Editar pagina
 
 PUT http://localhost:3000/api/webpage/66468de54c2308bd37b5d62b
 Authorization: Bearer {{tokenCommerce}}
@@ -142,7 +142,7 @@ Content-Type: application/json
   "summary": "rbevdrgaergverfv",
   "email": "1@gmail.com"
 }
-### Subir imagenes a la pagina VVVVVVVVVVVVVV
+### Subir imagenes a la pagina
 POST http://localhost:3000/api/webpage/image HTTP/1.1
 Authorization: Bearer {{tokenCommerce}}
 Content-Type: multipart/form-data; boundary=Boundry
@@ -155,7 +155,7 @@ Content-Type: image/jpg
 --Boundry--
 
 
-### subir comentario VVVVVVVVVVVVVVV
+### subir comentario
 POST http://localhost:3000/api/webpage/comment/66468de54c2308bd37b5d62b
 Authorization: Bearer {{tokenUser}}
 Content-Type: application/json
@@ -165,20 +165,21 @@ Content-Type: application/json
   "text": "excelente"
 }
 
-### lista con todas las paginas VVVVVVVVVVVVVV
+### lista con todas las paginas
 GET http://localhost:3000/api/webpage
 
-### encontrar pagina por ID VVVVVVVVVVVVV
+### encontrar pagina por ID
 GET http://localhost:3000/api/webpage/66468de54c2308bd37b5d62b
 
-### encontrar pagina por ciudad VVVVVVVVVVVVV
+### encontrar pagina por ciudad
 GET http://localhost:3000/api/webpage/pozuelo/true
 Authorization: Bearer {{tokenAdmin}}
 
-### encontrar pagina por ciudad y actividad VVVVVVVVVVVVVV
+### encontrar pagina por ciudad y actividad
 GET http://localhost:3000/api/webpage/madrid/mucha/true
 Authorization: Bearer {{tokenAdmin}}
 
-###eliminar pagina VVVVVVVVVVVVVVVVV
+###eliminar pagina
+
 DELETE http://localhost:3000/api/webpage/66469c265c6b589c040673af
 Authorization: Bearer {{tokenCommerce}}

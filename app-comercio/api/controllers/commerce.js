@@ -12,12 +12,12 @@ const getItems = async (req, res) => {
     }
 
     // Comprobar el rol del usuario
-    if (req.user.role !== 'admin') {
+    if (req.role !== 'admin') {
         // Excluir el campo CIF para usuarios que no son admin
         query = query.select('-cif -_id -rol -deleted -password');
     }
     const data = await query.exec();
-    console.log(req.user.role);
+    //console.log(req.user.role);
     res.send(data);
 }
 
@@ -60,14 +60,24 @@ const createItem = async (req, res) => {
 
 
 const updateItem = async (req, res) => {
-    const { CIF, ...body } = matchedData(req);
-    //busco el comercio a actualizar con el CIF
-    // console.log(CIF)
-    const updatedCommerce = await commerceModel.findOneAndUpdate({ CIF }, body, { new: true });
-    if (!updatedCommerce) {
-        return handleHttpError(res, 'COMMERCE_NOT_FOUND', 404);
+    try {
+        const { CIF, ...body } = matchedData(req);
+        const commerceCIF = req.commerceCIF; // Obtained from the token
+
+        // Verify if the commerce CIF from the token matches the CIF provided
+        if (commerceCIF !== CIF) {
+            return handleHttpError(res, 'UNAUTHORIZED', 403);
+        }
+
+        const updatedCommerce = await commerceModel.findOneAndUpdate({ CIF }, body, { new: true });
+        if (!updatedCommerce) {
+            return handleHttpError(res, 'COMMERCE_NOT_FOUND', 404);
+        }
+        res.send(updatedCommerce);
+    } catch (err) {
+        console.log(err);
+        handleHttpError(res, 'ERROR_UPDATE_COMMERCE');
     }
-    res.send(updatedCommerce);
 };
 
 const deleteItem = async (req, res) => {

@@ -17,19 +17,21 @@ const registerCtrl = async (req, res) => {
         }
         res.send(data)
     }catch(err) {
+        console.log(err)
         handleHttpError(res, "ERROR_REGISTER_USER")
     }
 }
 
 const loginCtrl = async (req, res) => {
     try {
+        console.log(req)
+
         req = matchedData(req);
         // console.log(req);
-
         // Usar el método `findOne` de Mongoose correctamente.
         var user = await usersModel.findOne({ email: req.email });
         // console.log(req.email);
-
+        console.log(user);
         if (!user) {
             user = await commerceModel.findOne({ email: req.email });
             if (!user) {
