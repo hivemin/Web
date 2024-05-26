@@ -32,7 +32,6 @@ const authMiddleware = async (req, res, next) => {
             const user = await commerceModel.findOne({
                 email: dataToken.email
             })
-            console.log(user)
             req.user = user
             if(!user){
                 handleHttpError(res, "USER_NOT_EXIST", 401)

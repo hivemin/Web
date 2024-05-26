@@ -5,7 +5,6 @@ const getProperties = require("../utils/handlePropertiesEngine")
 const propertiesKey = getProperties()
 
 const tokenSign = (user) => {
-    console.log(JWT_SECRET)
     const sign = jwt.sign(
         {
             email: user.email,

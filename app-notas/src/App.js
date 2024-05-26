@@ -6,7 +6,6 @@ import './App.css';
 function App() {
   const [notes, setNotes] = useState([]);
   const a=0;
-  console.log(notes);
 
   useEffect(() => {
     // Cargar notas desde el almacenamiento local al inicio

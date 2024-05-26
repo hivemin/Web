@@ -3,7 +3,7 @@ const { registerCtrl, loginCtrl } = require("../controllers/auth")
 const { validatorRegister, validatorLogin } = require("../validators/auth")
 const router = express.Router()
 
-router.post("/login", validatorLogin, loginCtrl)
+router.get("/login", validatorLogin, loginCtrl)
 router.post("/register", validatorRegister, registerCtrl)
 
 module.exports = router

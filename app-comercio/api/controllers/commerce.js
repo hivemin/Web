@@ -2,7 +2,10 @@ const  commerceModel  = require('../models/nosql/commerce'); // Importa el model
 const { handleHttpError } = require('../utils/handleError'); // Importa la función para manejar errores HTTP.
 const { matchedData } = require('express-validator'); // Importa la función para obtener datos coincidentes de las validaciones de Express.
 const { tokenSign } = require("../utils/handleJwt")
-const { encrypt } = require("../utils/handlePassword")
+const { encrypt } = require("../utils/handlePassword");
+const jwt = require('jsonwebtoken'); // Importa la librería jsonwebtoken para manejar tokens JWT.
+const SECRET_KEY  = "españa";
+
 const getItems = async (req, res) => {
     let query = commerceModel.find();
 
@@ -10,14 +13,15 @@ const getItems = async (req, res) => {
     if (req.query.sortByCIF === 'asc') {
         query = query.sort({ CIF: 1 });
     }
+    console.log(req.user.role)
+
 
     // Comprobar el rol del usuario
-    if (req.role !== 'admin') {
+    if (req.user.role !== 'admin') {
         // Excluir el campo CIF para usuarios que no son admin
         query = query.select('-cif -_id -rol -deleted -password');
     }
     const data = await query.exec();
-    //console.log(req.user.role);
     res.send(data);
 }
 
@@ -57,28 +61,25 @@ const createItem = async (req, res) => {
     }
 }
 
-
-
 const updateItem = async (req, res) => {
     try {
-        const { CIF, ...body } = matchedData(req);
-        const commerceCIF = req.commerceCIF; // Obtained from the token
+        const {cif} = req.params; // Obtiene el identificador único de los parámetros de la solicitud.
+        const data = req.body; // Obtiene los datos del cuerpo de la solicitud.
+        const updatedItem = await commerceModel.findOneAndUpdate({ cif: cif }, {update: data}, { new: true }); // Busca y actualiza un elemento por su cif único.
 
-        // Verify if the commerce CIF from the token matches the CIF provided
-        if (commerceCIF !== CIF) {
-            return handleHttpError(res, 'UNAUTHORIZED', 403);
+        console.log(cif)
+        console.log(data)
+
+        if (!updatedItem) {
+            return handleHttpError(res, 'COMMERCE_NOT_FOUND', 404); // Si no se encuentra el elemento, envía un error 404.
         }
 
-        const updatedCommerce = await commerceModel.findOneAndUpdate({ CIF }, body, { new: true });
-        if (!updatedCommerce) {
-            return handleHttpError(res, 'COMMERCE_NOT_FOUND', 404);
-        }
-        res.send(updatedCommerce);
+        res.send(updatedItem);
     } catch (err) {
         console.log(err);
-        handleHttpError(res, 'ERROR_UPDATE_COMMERCE');
+        handleHttpError(res, 'ERROR_UPDATE_ITEM');
     }
-};
+}
 
 const deleteItem = async (req, res) => {
     try {

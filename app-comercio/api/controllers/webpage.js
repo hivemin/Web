@@ -77,7 +77,6 @@ const updateWebpage = async (req, res) => {
 
         const page = await webpageModel.findById(id);
 
-        console.log(page)
         if (page.cif != cif) {
             handleHttpError(res, "ERROR_NOT_PROPERTY")
             return
@@ -98,7 +97,6 @@ const deleteWebpage = async (req, res) => {
         const { id } = matchedData(req);
         let result;
         result = await webpageModel.findByIdAndDelete(id);
-        console.log(result)
         res.send(result);
     } catch (err) {
         console.log(err);
