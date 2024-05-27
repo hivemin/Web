@@ -4,8 +4,6 @@ const { matchedData } = require('express-validator'); // Importa la función par
 const { tokenSign } = require("../utils/handleJwt")
 const { encrypt } = require("../utils/handlePassword");
 const jwt = require('jsonwebtoken'); // Importa la librería jsonwebtoken para manejar tokens JWT.
-const SECRET_KEY  = "españa";
-
 const getItems = async (req, res) => {
     let query = commerceModel.find();
 
@@ -13,7 +11,7 @@ const getItems = async (req, res) => {
     if (req.query.sortByCIF === 'asc') {
         query = query.sort({ CIF: 1 });
     }
-    console.log(req.user.role)
+    console.log(req.user)
 
 
     // Comprobar el rol del usuario
@@ -49,10 +47,11 @@ const createItem = async (req, res) => {
         user.set('password', undefined, { strict: false })
 
         const data = {
-            token: await tokenSign(user),
+            token: await tokenSign(user, "commerce"),
             user: user
-        }
 
+        }
+        console.log(data.user)
         res.send(data)
 
     }catch(err) {
@@ -63,23 +62,26 @@ const createItem = async (req, res) => {
 
 const updateItem = async (req, res) => {
     try {
-        const {cif} = req.params; // Obtiene el identificador único de los parámetros de la solicitud.
-        const data = req.body; // Obtiene los datos del cuerpo de la solicitud.
-        const updatedItem = await commerceModel.findOneAndUpdate({ cif: cif }, {update: data}, { new: true }); // Busca y actualiza un elemento por su cif único.
 
-        console.log(cif)
-        console.log(data)
-
-        if (!updatedItem) {
-            return handleHttpError(res, 'COMMERCE_NOT_FOUND', 404); // Si no se encuentra el elemento, envía un error 404.
+        const  body = matchedData(req); // Get the unique identifier and the body of the request.
+        // Check if password is provided in the request body
+        const cif = req.jwt.cif;
+        if (body.password) {
+            // Hash the new password
+            const hashedPassword = await encrypt(body.password);
+            body.password = hashedPassword;
         }
 
-        res.send(updatedItem);
+        const updatedCommerce = await commerceModel.findOneAndUpdate({ cif: cif }, body); // Search and update an item by its unique cif.
+        if (!updatedCommerce) {
+            return handleHttpError(res, 'COMMERCE_NOT_FOUND', 404);
+        }
+        res.send(updatedCommerce);
     } catch (err) {
-        console.log(err);
+        console.log(err)
         handleHttpError(res, 'ERROR_UPDATE_ITEM');
     }
-}
+};
 
 const deleteItem = async (req, res) => {
     try {

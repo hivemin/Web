@@ -6,7 +6,7 @@ const authMiddleware = require("../middleware/session")
 const checkRol = require("../middleware/rol")
 const uploadMiddleware = require("../utils/handleStorage")
 
-router.get("/", getItems)
+router.get("/",authMiddleware, checkRol(["user", "admin"]), getItems)
 router.get("/:id", validatorGetItem, getItem)
 router.get("/:city/:scoring", authMiddleware, checkRol(["user", "admin"]), validatorGetCity, getCity)
 router.get("/:city/:activity/:scoring", authMiddleware, checkRol(["user", "admin"]), validatorGetCityAndActivity, getCityAndActivity)

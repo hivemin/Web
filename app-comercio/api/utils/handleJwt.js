@@ -4,10 +4,12 @@ const JWT_SECRET = process.env.JWT_SECRET
 const getProperties = require("../utils/handlePropertiesEngine")
 const propertiesKey = getProperties()
 
-const tokenSign = (user) => {
+const tokenSign = (user, type) => {
     const sign = jwt.sign(
         {
+            type: type,
             email: user.email,
+            cif: user.cif ?? null,
             role: user.role
         },
         JWT_SECRET,
@@ -21,9 +23,9 @@ const tokenSign = (user) => {
 const verifyToken = async (tokenJwt) => {
     try {
         return jwt.verify(tokenJwt, JWT_SECRET)
-    }catch(err) {
+    } catch (err) {
         console.log(err)
     }
 }
 
-module.exports = { tokenSign, verifyToken }
+module.exports = {tokenSign, verifyToken}

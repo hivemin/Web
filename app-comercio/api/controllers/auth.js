@@ -12,7 +12,7 @@ const registerCtrl = async (req, res) => {
         const dataUser = await usersModel.create(body)
         dataUser.set('password', undefined, { strict: false })
         const data = {
-            token: await tokenSign(dataUser),
+            token: await tokenSign(dataUser, "user"),
             user: dataUser
         }
         res.send(data)
@@ -48,7 +48,7 @@ const loginCtrl = async (req, res) => {
 
         user.password = undefined;
         const data = {
-            token: await tokenSign(user),
+            token: await tokenSign(user, "user"),
             user
         };
 

@@ -1,6 +1,7 @@
 const { matchedData } = require("express-validator")
 const { handleHttpError } = require("../utils/handleError")
 const  webpageModel = require("../models/nosql/webpage")
+const commerceModel = require("../models/nosql/commerce");
 
 
 const getItem = async (req, res) => {
@@ -15,7 +16,17 @@ const getItem = async (req, res) => {
 }
 const getItems = async (req, res) => {
     try {
-        return res.send(await webpageModel.find({})); // Busca y envía todos los elementos del modelo.
+
+        let query = commerceModel.find();
+        console.log(req.user.role);
+        if (req.user.role !== 'admin') {
+            console.log(req.user.role);
+            // Excluir el campo CIF para usuarios que no son admin
+            query = query.select('-cif -_id -rol -deleted -password');
+        }
+        const data = await query.exec();
+        res.send(data);
+
     } catch (err) {
         handleHttpError(res, 'ERROR_GET_ITEMS', 404);
     }
@@ -120,8 +131,8 @@ const uploadImage = async (req, res) => {
 
 const getCity = async (req, res) => {
     try {
-        const { ciudad, scoring } = matchedData(req);
-        let queryOptions = { ciudad: ciudad };
+        const { city, scoring } = matchedData(req);
+        let queryOptions = { city: city };
 
         if (scoring) {
             // Use the sort method from Mongoose directly in the query
@@ -160,8 +171,45 @@ const getCityAndActivity = async (req, res) => {
     }
 }
 
+const addUser = async (req, res) => {
+    try {
+        const user ={
+            mail: req.user.email  // Email del usuario obtenido desde el objeto de la sesión
+        }
+        // const { id } = matchedData(req.params);
+        const id= req.params.id
+        console.log(id)
+        // Realizar la actualización utilizando `findByIdAndUpdate` para añadir el email al campo usuarios
+        // await paginaModel.findByIdAndUpdate(id, { $push: { usuarios: user } })
+
+        const data = await paginaModel.findByIdAndUpdate(
+            id,
+            { $push: { usuarios: user } },  // Utiliza $push para añadir el email al array de usuarios
+            { new: true }  // Opción para retornar el documento actualizado
+        );
+
+        // Enviar el documento actualizado como respuesta
+        res.send();
+
+    } catch (err) {
+        console.log(err);
+        handleHttpError(res, "ERROR_ADD_USER");
+    }
+}
+
+const getUsers = async (req, res) => {
+    try {
+        console.log("aaaaaaaaaa")
+
+
+    } catch (err) {
+        console.error(err);
+        handleHttpError(res, "ERROR_GET_USERS_OF_PAGE");
+    }
+};
 
 
 
-module.exports = {getItem, getItems, createComment, createWebpage, updateWebpage, deleteWebpage, uploadImage, getCity, getCityAndActivity}
+
+module.exports = {getItem, getItems, createComment, createWebpage, updateWebpage, deleteWebpage, uploadImage, getCity, getCityAndActivity, addUser, getUsers}
 

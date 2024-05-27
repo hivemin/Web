@@ -4,13 +4,13 @@ POST http://localhost:3000/api/auth/register
 Content-Type: application/json
 
 {
-  "name": "mauel",
-  "email": "manuprueba@gmail.com",
-  "password": "674352434",
-  "age": 50,
-  "city": "londres",
+  "name": "andres",
+  "email": "adrespalugo@gmail.com",
+  "password": "12332199",
+  "age": 23,
+  "city": "chipiona",
   "interests": ["comida", "deporte"],
-  "recOffers": "false",
+  "recOffers": "true",
   "role": "user"
 }
 
@@ -29,8 +29,8 @@ GET http://localhost:3000/api/auth/login
 Content-Type: application/json
 
 {
-  "email": "jotacaballorey@gmail.com",
-  "password": "674352434"
+  "email": "adrespalugo@gmail.com",
+  "password": "12332199"
 }
 > {% client.global.set("tokenUser", response.body.token) %}
 
@@ -41,9 +41,9 @@ Authorization: Bearer {{tokenUser}}
 Content-Type: application/json
 
 {
-  "name": "Paquito",
+  "name": "juan",
   "age": 31,
-  "city": "Pozuelo",
+  "city": "despeñaperros",
   "recOffers": "false"
 }
 
@@ -53,12 +53,12 @@ Authorization: Bearer {{tokenAdmin}}
 Content-Type: application/json
 
 {
-  "email": "boling@gmail.com",
-  "name": "boling",
-  "cif": "9990998",
-  "address": "calle falsa 72",
-  "phone": "667788990",
-  "password": "123456"
+  "email": "dia@gmail.com",
+  "name": "dia",
+  "cif": "555555555",
+  "address": "calle falsa 55",
+  "phone": "667222222",
+  "password": "contraseña"
 }
 ### commerce sin autorizacion
 POST http://localhost:3000/api/commerce HTTP/1.1
@@ -73,45 +73,43 @@ Content-Type: application/json
   "password": "121212121"
 }
 
-### todo el listado de commerces, sin iniciar sesion con token de admin
+### todo el listado de commerces con cif con token de admin
 GET http://localhost:3000/api/commerce HTTP/1.1
 Authorization: Bearer {{tokenAdmin}}
 
-### todo el listado de commerces sin iniciar sesion
+### todo el listado de commerces con token de user
 GET http://localhost:3000/api/commerce HTTP/1.1
+Authorization: Bearer {{tokenUser}}
 
 ### logIn de commerce
 GET  http://localhost:3000/api/auth/login
 Content-Type: application/json
 
 {
-  "email": "boling@gmail.com",
-  "password": "123456"
+  "email": "simio@gmail.com",
+  "password": "password"
 }
 > {% client.global.set("tokenCommerce", response.body.token) %}
 
 ### update de un commerce
-PUT http://localhost:3000/api/commerce/9990998 HTTP/1.1
+PUT http://localhost:3000/api/commerce HTTP/1.1
 Authorization: Bearer {{tokenCommerce}}
 Content-Type: application/json
 
 {
-  "name": "holdersUnited upd",
-  "cif": "123456",
-  "address": "btcAvenue",
-  "email": "holders@gmail.com",
+  "name": "DIA",
+  "address": "por ahí",
   "phone": "61934358",
-  "password": "password"
+  "password": "contraseña"
 }
 
 ### borrado logico
-DELETE http://localhost:3000/api/commerce/121212121?logical=true HTTP/1.1
+DELETE http://localhost:3000/api/commerce/555555555?logical=true HTTP/1.1
 
 
 ### borrado de un commerce
-DELETE http://localhost:3000/api/commerce/121212121?logical=false HTTP/1.1
+DELETE http://localhost:3000/api/commerce/555555555?logical=false HTTP/1.1
 Authorization: Bearer {{tokenCommerce}}
-
 
 
 
@@ -121,26 +119,27 @@ Content-Type: application/json
 Authorization: Bearer {{tokenCommerce}}
 
 {
-  "title": "alpargata",
-  "city": "coruña",
-  "summary": "pescado congelado",
+  "title": "pagina1",
+  "city": "madrid",
+  "user": "antonio gascon",
+  "summary": "resumen de la pagina",
   "text": "Lorem ipsum dolor sit amet",
   "scoring": 5,
   "numRatings": 1,
-  "review": "muy buena, 10/10",
+  "review": "bastante buena, 8/10",
   "activity": "mucha"
 }
 
 ### Editar pagina
 
-PUT http://localhost:3000/api/webpage/66468de54c2308bd37b5d62b
+PUT http://localhost:3000/api/webpage/6653cfe67df060a90bc6e0fb
 Authorization: Bearer {{tokenCommerce}}
 Content-Type: application/json
 
 {
-  "city": "Pozuelo",
-  "activity": "Restaurantes",
-  "title": "comida5",
+  "city": "Madrid",
+  "activity": "Ocio nocturno",
+  "title": "discoteca",
   "summary": "rbevdrgaergverfv",
   "email": "1@gmail.com"
 }
@@ -158,30 +157,35 @@ Content-Type: image/jpg
 
 
 ### subir comentario
-POST http://localhost:3000/api/webpage/comment/66468de54c2308bd37b5d62b
+POST http://localhost:3000/api/webpage/comment/6653cfe67df060a90bc6e0fb
 Authorization: Bearer {{tokenUser}}
 Content-Type: application/json
 
 {
-  "score": 5,
-  "text": "excelente"
+  "score": 7,
+  "text": "muy chulo"
 }
+
+### lista con todas las paginas con cif
+GET http://localhost:3000/api/webpage
+Authorization: Bearer {{tokenAdmin}}
 
 ### lista con todas las paginas
 GET http://localhost:3000/api/webpage
+Authorization: Bearer {{tokenUser}}
 
 ### encontrar pagina por ID
-GET http://localhost:3000/api/webpage/66468de54c2308bd37b5d62b
+GET http://localhost:3000/api/webpage/6653c1c71ec4d354048e09f4
 
 ### encontrar pagina por ciudad
-GET http://localhost:3000/api/webpage/pozuelo/true
-Authorization: Bearer {{tokenAdmin}}
+GET http://localhost:3000/api/webpage/Madrid/true
+Authorization: Bearer {{tokenUser}}
 
 ### encontrar pagina por ciudad y actividad
-GET http://localhost:3000/api/webpage/madrid/mucha/true
-Authorization: Bearer {{tokenAdmin}}
+GET http://localhost:3000/api/webpage/coruña/mucha/true
+Authorization: Bearer {{tokenUser}}
 
 ###eliminar pagina
 
-DELETE http://localhost:3000/api/webpage/66469c265c6b589c040673af
+DELETE http://localhost:3000/api/webpage/66538364922cf946a54257f9
 Authorization: Bearer {{tokenCommerce}}

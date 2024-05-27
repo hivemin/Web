@@ -11,7 +11,13 @@ const validatorCreateItem = [
     check("password").exists().notEmpty(),
     (req, res, next) => validateResults(req, res, next) // Llamamos a la función 'validateResults' para manejar los resultados de la validación
 ];
-
+const validatorUpdateItem = [
+    check("name").exists().notEmpty(),
+    check("address").exists().notEmpty(),
+    check("phone").exists().notEmpty(),
+    check("password").exists().notEmpty(),
+    (req, res, next) => validateResults(req, res, next) // Llamamos a la función 'validateResults' para manejar los resultados de la validación
+];
 const validatorGetItem = [
     check("cif").exists().notEmpty(),
     (req, res, next) => {
@@ -28,4 +34,4 @@ const validatorDeleteItem = [
 ];
 
 // Exporta los validadores para su uso en otros módulos
-module.exports = { validatorCreateItem, validatorGetItem, validatorDeleteItem };
+module.exports = { validatorCreateItem, validatorGetItem, validatorDeleteItem, validatorUpdateItem };
