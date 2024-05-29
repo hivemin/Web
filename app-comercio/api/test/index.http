@@ -4,12 +4,12 @@ POST http://localhost:3000/api/auth/register
 Content-Type: application/json
 
 {
-  "name": "andres",
-  "email": "adrespalugo@gmail.com",
-  "password": "12332199",
-  "age": 23,
-  "city": "chipiona",
-  "interests": ["comida", "deporte"],
+  "name": "adrian",
+  "email": "adrian@gmail.com",
+  "password": "123456",
+  "age": 25,
+  "city": "estambul",
+  "interests": ["fiesta", "lectura"],
   "recOffers": "true",
   "role": "user"
 }
@@ -29,8 +29,8 @@ GET http://localhost:3000/api/auth/login
 Content-Type: application/json
 
 {
-  "email": "adrespalugo@gmail.com",
-  "password": "12332199"
+  "email": "adrian@gmail.com",
+  "password": "123456"
 }
 > {% client.global.set("tokenUser", response.body.token) %}
 
@@ -41,7 +41,7 @@ Authorization: Bearer {{tokenUser}}
 Content-Type: application/json
 
 {
-  "name": "juan",
+  "name": "sebas",
   "age": 31,
   "city": "despeñaperros",
   "recOffers": "false"
@@ -53,9 +53,9 @@ Authorization: Bearer {{tokenAdmin}}
 Content-Type: application/json
 
 {
-  "email": "dia@gmail.com",
+  "email": "prueba3@gmail.com",
   "name": "dia",
-  "cif": "555555555",
+  "cif": "11112222",
   "address": "calle falsa 55",
   "phone": "667222222",
   "password": "contraseña"
@@ -86,8 +86,8 @@ GET  http://localhost:3000/api/auth/login
 Content-Type: application/json
 
 {
-  "email": "simio@gmail.com",
-  "password": "password"
+  "email": "prueba3@gmail.com",
+  "password": "contraseña"
 }
 > {% client.global.set("tokenCommerce", response.body.token) %}
 
@@ -132,12 +132,12 @@ Authorization: Bearer {{tokenCommerce}}
 
 ### Editar pagina
 
-PUT http://localhost:3000/api/webpage/6653cfe67df060a90bc6e0fb
+PUT http://localhost:3000/api/webpage/66544e75e4e0de27a7a44c2c
 Authorization: Bearer {{tokenCommerce}}
 Content-Type: application/json
 
 {
-  "city": "Madrid",
+  "city": "amsterdam",
   "activity": "Ocio nocturno",
   "title": "discoteca",
   "summary": "rbevdrgaergverfv",
@@ -157,7 +157,7 @@ Content-Type: image/jpg
 
 
 ### subir comentario
-POST http://localhost:3000/api/webpage/comment/6653cfe67df060a90bc6e0fb
+POST http://localhost:3000/api/webpage/comment/6653c1c71ec4d354048e09f4
 Authorization: Bearer {{tokenUser}}
 Content-Type: application/json
 
@@ -178,14 +178,14 @@ Authorization: Bearer {{tokenUser}}
 GET http://localhost:3000/api/webpage/6653c1c71ec4d354048e09f4
 
 ### encontrar pagina por ciudad
-GET http://localhost:3000/api/webpage/Madrid/true
+GET http://localhost:3000/api/webpage/palencia/true
 Authorization: Bearer {{tokenUser}}
 
 ### encontrar pagina por ciudad y actividad
-GET http://localhost:3000/api/webpage/coruña/mucha/true
+GET http://localhost:3000/api/webpage/palencia/poca/true
 Authorization: Bearer {{tokenUser}}
 
 ###eliminar pagina
 
-DELETE http://localhost:3000/api/webpage/66538364922cf946a54257f9
+DELETE http://localhost:3000/api/webpage/6653cfe67df060a90bc6e0fb
 Authorization: Bearer {{tokenCommerce}}

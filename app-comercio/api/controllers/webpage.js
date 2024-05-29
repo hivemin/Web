@@ -83,19 +83,13 @@ const createWebpage = async (req, res) => {
 
 const updateWebpage = async (req, res) => {
     try {
-        cif = req.user.cif
-        const { id, ...body } = matchedData(req)
+        const cif = req.jwt.cif;
+        const body = matchedData(req)
 
-        const page = await webpageModel.findById(id);
-
-        if (page.cif != cif) {
-            handleHttpError(res, "ERROR_NOT_PROPERTY")
-            return
+        const data = await webpageModel.findOneAndUpdate({ cif: cif }, body);
+        if (!data) {
+            return handleHttpError(res, 'NOT_PERMISSION', 403);
         }
-
-        const data = await webpageModel.findByIdAndUpdate(id, body, { new: true });
-
-
         res.send(data)
 
     } catch (err) {
