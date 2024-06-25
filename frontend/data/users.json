@@ -1,0 +1,44 @@
+[
+  {
+    "email": "oscar",
+    "ciudad": "Madrid",
+    "publicidad": true,
+    "password": "oscar12345",
+    "tipo": "admin"
+  },
+  {
+    "email": "usuario2@gmail.com",
+    "ciudad": "Valencia",
+    "publicidad": true,
+    "password": "prueba123",
+    "tipo": "user"
+  },
+  {
+    "email": "usuario3@gmail.com",
+    "ciudad": "Madrid",
+    "publicidad": false,
+    "password": "secreto789",
+    "tipo": "admin"
+  },
+  {
+    "email": "usuario4@gmail.com",
+    "ciudad": "Sevilla",
+    "publicidad": true,
+    "password": "contraseña987",
+    "tipo": "user"
+  },
+  {
+    "email": "usuario5@gmail.com",
+    "ciudad": "Alicante",
+    "publicidad": false,
+    "password": "clave123",
+    "tipo": "user"
+  },
+  {
+    "email": "usuario6@gmail.com",
+    "ciudad": "Valencia",
+    "publicidad": true,
+    "password": "secreto456",
+    "tipo": "user"
+  }
+]
