@@ -1,0 +1,11 @@
+{
+  "errors": [
+    {
+      "type": "field",
+      "value": "Admin",
+      "msg": "Invalid value",
+      "path": "password",
+      "location": "body"
+    }
+  ]
+}

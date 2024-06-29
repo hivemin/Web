@@ -1,0 +1,145 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="c84fdc66-1210-4d45-a2ef-8202a8d8af07" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/../../.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../.idea/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../.idea/Web.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../.idea/dataSources.local.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../.idea/dataSources.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../.idea/dataSources/8ed4ec9d-7321-4089-8687-5ed1f8cfd36e.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../.idea/modules.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../.idea/vcs.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../api-restful/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../api-restful/.idea/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../api-restful/.idea/api-restful.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../api-restful/.idea/modules.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../api-restful/.idea/vcs.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../api-restful/app.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../api-restful/config/mongo.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../api-restful/controllers/commerce.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../api-restful/models/index.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../api-restful/models/nosql/commerce.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../api-restful/package-lock.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../api-restful/package.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../api-restful/routes/commerce.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../api-restful/routes/index.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../api-restful/test/index.http" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../api-restful/utils/handleError.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../api-restful/utils/handleValidator.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../api-restful/validators/commerce.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/app.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/config/webhook.js" beforeDir="false" afterPath="$PROJECT_DIR$/config/webhook.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/index.http" beforeDir="false" afterPath="$PROJECT_DIR$/test/index.http" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/utils/handleJwt.js" beforeDir="false" afterPath="$PROJECT_DIR$/utils/handleJwt.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../app-notas/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../app-notas/README.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../app-notas/package-lock.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../app-notas/package.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../app-notas/public/favicon.ico" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../app-notas/public/index.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../app-notas/public/logo192.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../app-notas/public/logo512.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../app-notas/public/manifest.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../app-notas/public/robots.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../app-notas/src/App.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../app-notas/src/App.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../app-notas/src/App.test.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../app-notas/src/components/Note.jsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../app-notas/src/components/NoteEditor.jsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../app-notas/src/components/NoteList.jsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../app-notas/src/index.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../app-notas/src/index.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../app-notas/src/logo.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../app-notas/src/reportWebVitals.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../app-notas/src/setupTests.js" beforeDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/../.." />
+  </component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 3
+}</component>
+  <component name="ProjectId" id="2hSPrhrOU83WnuIFBNM9aEQVuje" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;HTTP Request.index | Crear un usuario.executor&quot;: &quot;Run&quot;,
+    &quot;HTTP Request.index | commerce sin autorizacion.executor&quot;: &quot;Run&quot;,
+    &quot;HTTP Request.index | login admin.executor&quot;: &quot;Run&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/juanl/Desktop/Universidad/WorkSpace/Universidad/Tercero_INSO/Segundo_Cuatri/ProgramacionWeb/EntregaFinalFinal/api&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  },
+  &quot;keyToStringList&quot;: {
+    &quot;DatabaseDriversLRU&quot;: [
+      &quot;mongo&quot;
+    ]
+  }
+}</component>
+  <component name="RunManager" selected="HTTP Request.index | commerce sin autorizacion">
+    <configuration name="index | Crear un usuario" type="HttpClient.HttpRequestRunConfigurationType" factoryName="HTTP Request" temporary="true" nameIsGenerated="true" path="$PROJECT_DIR$/test/index.http" requestIdentifier="Crear un usuario" runType="Run single request">
+      <method v="2" />
+    </configuration>
+    <configuration name="index | commerce sin autorizacion" type="HttpClient.HttpRequestRunConfigurationType" factoryName="HTTP Request" temporary="true" nameIsGenerated="true" path="$PROJECT_DIR$/test/index.http" index="6" requestIdentifier="commerce sin autorizacion" runType="Run single request">
+      <method v="2" />
+    </configuration>
+    <configuration name="index | login admin" type="HttpClient.HttpRequestRunConfigurationType" factoryName="HTTP Request" temporary="true" nameIsGenerated="true" path="$PROJECT_DIR$/test/index.http" index="2" requestIdentifier="login admin" runType="Run single request">
+      <method v="2" />
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="HTTP Request.index | commerce sin autorizacion" />
+        <item itemvalue="HTTP Request.index | login admin" />
+        <item itemvalue="HTTP Request.index | Crear un usuario" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SharedIndexes">
+    <attachedChunks>
+      <set>
+        <option value="bundled-js-predefined-1d06a55b98c1-0b3e54e931b4-JavaScript-WS-241.17011.90" />
+      </set>
+    </attachedChunks>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="c84fdc66-1210-4d45-a2ef-8202a8d8af07" name="Changes" comment="" />
+      <created>1717584706469</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1717584706469</updated>
+      <workItem from="1717584707374" duration="546000" />
+      <workItem from="1717585270171" duration="1169000" />
+      <workItem from="1719692333365" duration="561000" />
+      <workItem from="1719692957167" duration="28000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="UnknownFeatures">
+    <option featureType="com.intellij.fileTypeFactory" implementationName=".env" />
+  </component>
+</project>

@@ -1,0 +1,12 @@
+{
+  "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0eXBlIjoidXNlciIsImVtYWlsIjoiUHJ1ZWJhQGdtYWlsLmNvbSIsImNpZiI6bnVsbCwicm9sZSI6InVzZXIiLCJpYXQiOjE3MTc1ODU1MzEsImV4cCI6MTcxNzU5MjczMX0.dHz2jDlfJU5UEN8u9leVpgerRT_PzGxppcvmR9Z9B38",
+  "user": {
+    "name": "Prueba",
+    "email": "Prueba@gmail.com",
+    "age": 25,
+    "city": "Madrid",
+    "recOffers": true,
+    "role": "user",
+    "_id": "6660467a49cc1d35fe726eaa"
+  }
+}

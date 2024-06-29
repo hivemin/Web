@@ -1,0 +1,12 @@
+{
+  "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0eXBlIjoidXNlciIsImVtYWlsIjoiQWRtaW5AZ21haWwuY29tIiwiY2lmIjpudWxsLCJyb2xlIjoidXNlciIsImlhdCI6MTcxNzU4NTkwNiwiZXhwIjoxNzE3NTkzMTA2fQ.LWBV3EltUQAOQ_KJ2pG6aHrL4On0suT5GTvebYVXcLg",
+  "user": {
+    "_id": "666047bf49cc1d35fe726eac",
+    "name": "Admin",
+    "email": "Admin@gmail.com",
+    "age": 25,
+    "city": "Madrid",
+    "recOffers": true,
+    "role": "user"
+  }
+}

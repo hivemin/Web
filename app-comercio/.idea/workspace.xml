@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="13975d2c-6201-4c9f-bc5d-cb7e9ccb5898" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/app-comercio.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/app-comercio.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources.local.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/0866042e-7f39-4b48-b9bf-be035a23de73.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/api/app.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/api/config/mongo.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/api/config/webhook.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/api/controllers/auth.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/api/controllers/commerce.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/api/controllers/user.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/api/controllers/webpage.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/api/docs/swagger.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/api/middleware/rol.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/api/middleware/session.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/api/models/index.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/api/models/nosql/commerce.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/api/models/nosql/user.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/api/models/nosql/webpage.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/api/routes/auth.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/api/routes/commerce.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/api/routes/index.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/api/routes/user.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/api/routes/webpage.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/api/storage/file-1715886780518.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/api/storage/file-1716803351507.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/api/test/img.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/api/test/index.http" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/api/utils/handleError.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/api/utils/handleJwt.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/api/utils/handleLogger.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/api/utils/handlePassword.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/api/utils/handlePropertiesEngine.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/api/utils/handleStorage.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/api/utils/handleValidator.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/api/validators/auth.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/api/validators/commerce.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/api/validators/user.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/api/validators/webpage.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
+  </component>
+  <component name="ProjectColorInfo"><![CDATA[{
+  "customColor": "",
+  "associatedIndex": 2
+}]]></component>
+  <component name="ProjectId" id="2iZQ25EP5gC1Qe4mTAKbj9S6Z0n" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "git-widget-placeholder": "main",
+    "last_opened_file_path": "C:/Users/Óscar/OneDrive/Documentos/GitHub/Web/app-comercio",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "vue.rearranger.settings.migration": "true"
+  }
+}]]></component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="13975d2c-6201-4c9f-bc5d-cb7e9ccb5898" name="Changes" comment="" />
+      <created>1719695408942</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1719695408942</updated>
+      <workItem from="1719695410004" duration="808000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+</project>
