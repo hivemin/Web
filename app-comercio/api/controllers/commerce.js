@@ -11,7 +11,7 @@ const getItems = async (req, res) => {
     if (req.query.sortByCIF === 'asc') {
         query = query.sort({ CIF: 1 });
     }
-    console.log(req.user)
+    // console.log(req.user)
 
 
     // Comprobar el rol del usuario
@@ -51,7 +51,7 @@ const createItem = async (req, res) => {
             user: user
 
         }
-        console.log(data.user)
+        //console.log(data.user)
         res.send(data)
 
     }catch(err) {
@@ -64,6 +64,7 @@ const updateItem = async (req, res) => {
     try {
 
         const  body = matchedData(req); // Get the unique identifier and the body of the request.
+        console.log(body)
         // Check if password is provided in the request body
         const cif = req.jwt.cif;
         if (body.password) {

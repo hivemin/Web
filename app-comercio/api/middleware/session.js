@@ -27,7 +27,7 @@ const authMiddleware = async (req, res, next) => {
 
         req.user = user
         req.jwt = dataToken
-        console.log(user)
+        // console.log(user)
         if(!user){
 
             const user = await commerceModel.findOne({

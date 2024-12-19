@@ -1,0 +1,13 @@
+{
+  "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0eXBlIjoidXNlciIsImVtYWlsIjoicHJ1ZWJhMUBnbWFpbC5jb20iLCJjaWYiOiI4ODg4ODg4Iiwicm9sZSI6ImNvbW1lcmNlIiwiaWF0IjoxNzE5NzA1NTAzLCJleHAiOjE3MTk3MTI3MDN9.16AsjIUpP5JEX_rsH9pn2IH_BchCr_rDeTA8UrWLjbM",
+  "user": {
+    "_id": "66544de6e4e0de27a7a44c1e",
+    "name": "DIA",
+    "cif": "8888888",
+    "address": "por ahí",
+    "email": "prueba1@gmail.com",
+    "phone": "61934358",
+    "role": "commerce",
+    "deleted": false
+  }
+}

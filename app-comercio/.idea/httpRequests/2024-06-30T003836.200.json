@@ -1,0 +1,11 @@
+{
+  "_id": "665450030c4f4d85ef56bfed",
+  "name": "dia",
+  "cif": "11112222",
+  "address": "calle falsa 55",
+  "email": "prueba3@gmail.com",
+  "phone": "667222222",
+  "password": "$2a$10$8z95JDQBvDVcusu5/.HNvOgMwbVa/SFCYeFf7CjZJ2SQaO27fX.hK",
+  "role": "commerce",
+  "deleted": true
+}

@@ -1,0 +1,13 @@
+{
+  "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0eXBlIjoidXNlciIsImVtYWlsIjoicHJ1ZWJhM0BnbWFpbC5jb20iLCJjaWYiOiIxMTExMjIyMiIsInJvbGUiOiJjb21tZXJjZSIsImlhdCI6MTcxOTcwMDY3OCwiZXhwIjoxNzE5NzA3ODc4fQ.L9T6h_Q84wQfuG6xdNLOwycEs88cdadQ1_vpP68OFLI",
+  "user": {
+    "_id": "665450030c4f4d85ef56bfed",
+    "name": "dia",
+    "cif": "11112222",
+    "address": "calle falsa 55",
+    "email": "prueba3@gmail.com",
+    "phone": "667222222",
+    "role": "commerce",
+    "deleted": false
+  }
+}

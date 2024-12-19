@@ -5,48 +5,18 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="13975d2c-6201-4c9f-bc5d-cb7e9ccb5898" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/app-comercio.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/app-comercio.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources.local.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/0866042e-7f39-4b48-b9bf-be035a23de73.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/api/app.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/api/config/mongo.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/api/config/webhook.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/api/controllers/auth.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/api/controllers/commerce.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/api/controllers/user.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/api/controllers/webpage.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/api/docs/swagger.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/api/middleware/rol.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/api/middleware/session.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/api/models/index.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/api/models/nosql/commerce.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/api/models/nosql/user.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/api/models/nosql/webpage.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/api/routes/auth.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/api/routes/commerce.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/api/routes/index.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/api/routes/user.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/api/routes/webpage.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/api/storage/file-1715886780518.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/api/storage/file-1716803351507.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/api/test/img.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/api/test/index.http" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/api/utils/handleError.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/api/utils/handleJwt.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/api/utils/handleLogger.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/api/utils/handlePassword.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/api/utils/handlePropertiesEngine.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/api/utils/handleStorage.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/api/utils/handleValidator.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/api/validators/auth.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/api/validators/commerce.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/api/validators/user.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/api/validators/webpage.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/copilot/chatSessions/00000000000.xd" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/copilot/chatSessions/00000000000.xd" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/copilot/chatSessions/xd.lck" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/copilot/chatSessions/xd.lck" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources.local.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.local.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/8af9108a-e356-4733-b784-03228d75f3f3.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/api/controllers/commerce.js" beforeDir="false" afterPath="$PROJECT_DIR$/api/controllers/commerce.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/api/controllers/webpage.js" beforeDir="false" afterPath="$PROJECT_DIR$/api/controllers/webpage.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/api/middleware/session.js" beforeDir="false" afterPath="$PROJECT_DIR$/api/middleware/session.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/api/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/api/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/api/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/api/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/api/test/index.http" beforeDir="false" afterPath="$PROJECT_DIR$/api/test/index.http" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/api/utils/handleJwt.js" beforeDir="false" afterPath="$PROJECT_DIR$/api/utils/handleJwt.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -56,10 +26,10 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
   </component>
-  <component name="ProjectColorInfo"><![CDATA[{
-  "customColor": "",
-  "associatedIndex": 2
-}]]></component>
+  <component name="ProjectColorInfo">{
+  &quot;customColor&quot;: &quot;&quot;,
+  &quot;associatedIndex&quot;: 2
+}</component>
   <component name="ProjectId" id="2iZQ25EP5gC1Qe4mTAKbj9S6Z0n" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
@@ -67,6 +37,14 @@
   </component>
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
+    "HTTP Request.index | Crear pagina.executor": "Run",
+    "HTTP Request.index | Crear un usuario.executor": "Run",
+    "HTTP Request.index | Subir imagenes a la pagina.executor": "Run",
+    "HTTP Request.index | borrado logico.executor": "Run",
+    "HTTP Request.index | logIn de commerce.executor": "Run",
+    "HTTP Request.index | login admin.executor": "Run",
+    "HTTP Request.index | login normal.executor": "Run",
+    "HTTP Request.index | update de un commerce.executor": "Run",
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "git-widget-placeholder": "main",
@@ -76,9 +54,42 @@
     "node.js.selected.package.eslint": "(autodetect)",
     "node.js.selected.package.tslint": "(autodetect)",
     "nodejs_package_manager_path": "npm",
+    "settings.editor.selected.configurable": "reference.settings.ide.settings.notifications",
+    "ts.external.directory.path": "C:\\Users\\Óscar\\AppData\\Local\\JetBrains\\WebStorm 2023.3.5\\plugins\\javascript-impl\\jsLanguageServicesImpl\\external",
     "vue.rearranger.settings.migration": "true"
+  },
+  "keyToStringList": {
+    "DatabaseDriversLRU": [
+      "mongo"
+    ]
   }
 }]]></component>
+  <component name="RunManager" selected="HTTP Request.index | update de un commerce">
+    <configuration name="index | Crear pagina" type="HttpClient.HttpRequestRunConfigurationType" factoryName="HTTP Request" temporary="true" nameIsGenerated="true" path="$PROJECT_DIR$/api/test/index.http" index="13" requestIdentifier="Crear pagina" runType="Run single request">
+      <method v="2" />
+    </configuration>
+    <configuration name="index | borrado logico" type="HttpClient.HttpRequestRunConfigurationType" factoryName="HTTP Request" temporary="true" nameIsGenerated="true" path="$PROJECT_DIR$/api/test/index.http" index="11" requestIdentifier="borrado logico" runType="Run single request">
+      <method v="2" />
+    </configuration>
+    <configuration name="index | logIn de commerce" type="HttpClient.HttpRequestRunConfigurationType" factoryName="HTTP Request" temporary="true" nameIsGenerated="true" path="$PROJECT_DIR$/api/test/index.http" index="9" requestIdentifier="logIn de commerce" runType="Run single request">
+      <method v="2" />
+    </configuration>
+    <configuration name="index | login admin" type="HttpClient.HttpRequestRunConfigurationType" factoryName="HTTP Request" temporary="true" nameIsGenerated="true" path="$PROJECT_DIR$/api/test/index.http" index="2" requestIdentifier="login admin" runType="Run single request">
+      <method v="2" />
+    </configuration>
+    <configuration name="index | update de un commerce" type="HttpClient.HttpRequestRunConfigurationType" factoryName="HTTP Request" temporary="true" nameIsGenerated="true" path="$PROJECT_DIR$/api/test/index.http" index="10" requestIdentifier="update de un commerce" runType="Run single request">
+      <method v="2" />
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="HTTP Request.index | update de un commerce" />
+        <item itemvalue="HTTP Request.index | logIn de commerce" />
+        <item itemvalue="HTTP Request.index | login admin" />
+        <item itemvalue="HTTP Request.index | borrado logico" />
+        <item itemvalue="HTTP Request.index | Crear pagina" />
+      </list>
+    </recent_temporary>
+  </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
@@ -88,6 +99,7 @@
       <option name="presentableId" value="Default" />
       <updated>1719695408942</updated>
       <workItem from="1719695410004" duration="808000" />
+      <workItem from="1719696789772" duration="7607000" />
     </task>
     <servers />
   </component>

@@ -86,7 +86,7 @@ GET  http://localhost:3000/api/auth/login
 Content-Type: application/json
 
 {
-  "email": "prueba3@gmail.com",
+  "email": "prueba1@gmail.com",
   "password": "contraseña"
 }
 > {% client.global.set("tokenCommerce", response.body.token) %}
@@ -104,11 +104,11 @@ Content-Type: application/json
 }
 
 ### borrado logico
-DELETE http://localhost:3000/api/commerce/555555555?logical=true HTTP/1.1
+DELETE http://localhost:3000/api/commerce/11112222?logical=true HTTP/1.1
 
 
 ### borrado de un commerce
-DELETE http://localhost:3000/api/commerce/555555555?logical=false HTTP/1.1
+DELETE http://localhost:3000/api/commerce/11112222?logical=false HTTP/1.1
 Authorization: Bearer {{tokenCommerce}}
 
 

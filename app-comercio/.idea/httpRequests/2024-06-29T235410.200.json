@@ -1,0 +1,12 @@
+{
+  "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0eXBlIjoidXNlciIsImVtYWlsIjoiYWRyaWFuQGdtYWlsLmNvbSIsImNpZiI6bnVsbCwicm9sZSI6InVzZXIiLCJpYXQiOjE3MTk2OTgwNTAsImV4cCI6MTcxOTcwNTI1MH0.gmibkpbtyI7CXC0G7grKmvedDvX3iE_zQmGKrdnK9ss",
+  "user": {
+    "name": "adrian",
+    "email": "adrian@gmail.com",
+    "age": 25,
+    "city": "estambul",
+    "recOffers": true,
+    "role": "user",
+    "_id": "668082823298cb47b431e07e"
+  }
+}

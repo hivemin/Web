@@ -1,0 +1,427 @@
+PUT http://localhost:3000/api/commerce
+Authorization: Bearer null
+Content-Type: application/json
+Content-Length: 96
+Connection: Keep-Alive
+User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.10)
+Accept-Encoding: br,deflate,gzip,x-gzip
+
+{
+  "name": "DIA",
+  "address": "por ahí",
+  "phone": "61934358",
+  "password": "contraseña"
+}
+
+<> 2024-06-30T015834.401.html
+
+###
+
+GET http://localhost:3000/api/auth/login
+Content-Type: application/json
+Content-Length: 63
+Connection: Keep-Alive
+User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.10)
+Accept-Encoding: br,deflate,gzip,x-gzip
+
+{
+  "email": "prueba1@gmail.com",
+  "password": "contraseña"
+}
+
+<> 2024-06-30T015823.200.json
+
+###
+
+PUT http://localhost:3000/api/commerce
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0eXBlIjoidXNlciIsImVtYWlsIjoicHJ1ZWJhMUBnbWFpbC5jb20iLCJjaWYiOiI4ODg4ODg4Iiwicm9sZSI6ImNvbW1lcmNlIiwiaWF0IjoxNzE5NzA1MTM0LCJleHAiOjE3MTk3MTIzMzR9.0q51lTuLKBtfCiH4pTHIQd2XdMk4RTiZN7wzh4Dw1Zs
+Content-Type: application/json
+Content-Length: 96
+Connection: Keep-Alive
+User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.10)
+Accept-Encoding: br,deflate,gzip,x-gzip
+
+{
+  "name": "DIA",
+  "address": "por ahí",
+  "phone": "61934358",
+  "password": "contraseña"
+}
+
+<> 2024-06-30T015228.200.json
+
+###
+
+GET http://localhost:3000/api/auth/login
+Content-Type: application/json
+Content-Length: 63
+Connection: Keep-Alive
+User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.10)
+Accept-Encoding: br,deflate,gzip,x-gzip
+
+{
+  "email": "prueba1@gmail.com",
+  "password": "contraseña"
+}
+
+<> 2024-06-30T015214.200.json
+
+###
+
+GET http://localhost:3000/api/auth/login
+Content-Type: application/json
+Content-Length: 63
+Connection: Keep-Alive
+User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.10)
+Accept-Encoding: br,deflate,gzip,x-gzip
+
+{
+  "email": "prueba3@gmail.com",
+  "password": "contraseña"
+}
+
+<> 2024-06-30T015130.404.html
+
+###
+
+GET http://localhost:3000/api/auth/login
+Content-Type: application/json
+Content-Length: 63
+Connection: Keep-Alive
+User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.10)
+Accept-Encoding: br,deflate,gzip,x-gzip
+
+{
+  "email": "prueba3@gmail.com",
+  "password": "contraseña"
+}
+
+<> 2024-06-30T015126.404.html
+
+###
+
+GET http://localhost:3000/api/auth/login
+Content-Type: application/json
+Content-Length: 63
+Connection: Keep-Alive
+User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.10)
+Accept-Encoding: br,deflate,gzip,x-gzip
+
+{
+  "email": "prueba3@gmail.com",
+  "password": "contraseña"
+}
+
+<> 2024-06-30T015036.404.html
+
+###
+
+GET http://localhost:3000/api/auth/login
+Content-Type: application/json
+Content-Length: 63
+Connection: Keep-Alive
+User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.10)
+Accept-Encoding: br,deflate,gzip,x-gzip
+
+{
+  "email": "prueba3@gmail.com",
+  "password": "contraseña"
+}
+
+<> 2024-06-30T015028.404.html
+
+###
+
+GET http://localhost:3000/api/auth/login
+Content-Type: application/json
+Content-Length: 63
+Connection: Keep-Alive
+User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.10)
+Accept-Encoding: br,deflate,gzip,x-gzip
+
+{
+  "email": "prueba3@gmail.com",
+  "password": "contraseña"
+}
+
+<> 2024-06-30T014944.404.html
+
+###
+
+GET http://localhost:3000/api/auth/login
+Content-Type: application/json
+Content-Length: 63
+Connection: Keep-Alive
+User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.10)
+Accept-Encoding: br,deflate,gzip,x-gzip
+
+{
+  "email": "prueba3@gmail.com",
+  "password": "contraseña"
+}
+
+<> 2024-06-30T014933.404.html
+
+###
+
+PUT http://localhost:3000/api/commerce
+Authorization: Bearer null
+Content-Type: application/json
+Content-Length: 96
+Connection: Keep-Alive
+User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.10)
+Accept-Encoding: br,deflate,gzip,x-gzip
+
+{
+  "name": "DIA",
+  "address": "por ahí",
+  "phone": "61934358",
+  "password": "contraseña"
+}
+
+<> 2024-06-30T014930.401.html
+
+###
+
+GET http://localhost:3000/api/auth/login
+Content-Type: application/json
+Content-Length: 63
+Connection: Keep-Alive
+User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.10)
+Accept-Encoding: br,deflate,gzip,x-gzip
+
+{
+  "email": "prueba3@gmail.com",
+  "password": "contraseña"
+}
+
+<> 2024-06-30T014928.404.html
+
+###
+
+GET http://localhost:3000/api/auth/login
+Content-Type: application/json
+Content-Length: 53
+Connection: Keep-Alive
+User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.10)
+Accept-Encoding: br,deflate,gzip,x-gzip
+
+{
+  "email": "yo@gmail.com",
+  "password": "123456"
+}
+
+<> 2024-06-30T013701.200.json
+
+###
+
+DELETE http://localhost:3000/api/commerce/11112222?logical=true
+Connection: Keep-Alive
+User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.10)
+Accept-Encoding: br,deflate,gzip,x-gzip
+
+<> 2024-06-30T003836.200.json
+
+###
+
+GET http://localhost:3000/api/auth/login
+Content-Type: application/json
+Content-Length: 63
+Connection: Keep-Alive
+User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.10)
+Accept-Encoding: br,deflate,gzip,x-gzip
+
+{
+  "email": "prueba3@gmail.com",
+  "password": "contraseña"
+}
+
+<> 2024-06-30T003758.200.json
+
+###
+
+GET http://localhost:3000/api/auth/login
+Content-Type: application/json
+Content-Length: 63
+Connection: Keep-Alive
+User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.10)
+Accept-Encoding: br,deflate,gzip,x-gzip
+
+{
+  "email": "prueba3@gmail.com",
+  "password": "contraseña"
+}
+
+<> 2024-06-30T003727.200.json
+
+###
+
+DELETE http://localhost:3000/api/commerce/555555555?logical=true
+Connection: Keep-Alive
+User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.10)
+Accept-Encoding: br,deflate,gzip,x-gzip
+
+<> 2024-06-30T003709.404.html
+
+###
+
+POST http://localhost:3000/api/webpage
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0eXBlIjoidXNlciIsImVtYWlsIjoicHJ1ZWJhM0BnbWFpbC5jb20iLCJjaWYiOiIxMTExMjIyMiIsInJvbGUiOiJjb21tZXJjZSIsImlhdCI6MTcxOTY5ODIyNCwiZXhwIjoxNzE5NzA1NDI0fQ.pw_5Wg5lBZav1q8qpPkktIP-TYQTroGM9OcFqBV9zbw
+Content-Length: 243
+Connection: Keep-Alive
+User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.10)
+Accept-Encoding: br,deflate,gzip,x-gzip
+
+{
+  "title": "pagina1",
+  "city": "madrid",
+  "user": "antonio gascon",
+  "summary": "resumen de la pagina",
+  "text": "Lorem ipsum dolor sit amet",
+  "scoring": 5,
+  "numRatings": 1,
+  "review": "bastante buena, 8/10",
+  "activity": "mucha"
+}
+
+<> 2024-06-30T003049.200.json
+
+###
+
+POST http://localhost:3000/api/webpage/image
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0eXBlIjoidXNlciIsImVtYWlsIjoicHJ1ZWJhM0BnbWFpbC5jb20iLCJjaWYiOiIxMTExMjIyMiIsInJvbGUiOiJjb21tZXJjZSIsImlhdCI6MTcxOTY5ODIyNCwiZXhwIjoxNzE5NzA1NDI0fQ.pw_5Wg5lBZav1q8qpPkktIP-TYQTroGM9OcFqBV9zbw
+Content-Type: multipart/form-data; boundary=Boundry
+Content-Length: 60962
+Connection: Keep-Alive
+User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.10)
+Accept-Encoding: br,deflate,gzip,x-gzip
+
+--Boundry
+Content-Disposition: form-data; name="image"; filename="img.jpg"
+Content-Type: image/jpg
+
+< C:\Users\Óscar\OneDrive\Documentos\GitHub\Web\app-comercio\api\test\img.jpg
+--Boundry--
+
+<> 2024-06-30T000858.200.json
+
+###
+
+POST http://localhost:3000/api/webpage/image
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0eXBlIjoidXNlciIsImVtYWlsIjoicHJ1ZWJhM0BnbWFpbC5jb20iLCJjaWYiOiIxMTExMjIyMiIsInJvbGUiOiJjb21tZXJjZSIsImlhdCI6MTcxOTY5ODIyNCwiZXhwIjoxNzE5NzA1NDI0fQ.pw_5Wg5lBZav1q8qpPkktIP-TYQTroGM9OcFqBV9zbw
+Content-Type: multipart/form-data; boundary=Boundry
+Content-Length: 60962
+Connection: Keep-Alive
+User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.10)
+Accept-Encoding: br,deflate,gzip,x-gzip
+
+--Boundry
+Content-Disposition: form-data; name="image"; filename="img.jpg"
+Content-Type: image/jpg
+
+< C:\Users\Óscar\OneDrive\Documentos\GitHub\Web\app-comercio\api\test\img.jpg
+--Boundry--
+
+<> 2024-06-29T235710.200.json
+
+###
+
+GET http://localhost:3000/api/auth/login
+Content-Type: application/json
+Content-Length: 63
+Connection: Keep-Alive
+User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.10)
+Accept-Encoding: br,deflate,gzip,x-gzip
+
+{
+  "email": "prueba3@gmail.com",
+  "password": "contraseña"
+}
+
+<> 2024-06-29T235704.200.json
+
+###
+
+POST http://localhost:3000/api/auth/register
+Content-Type: application/json
+Content-Length: 191
+Connection: Keep-Alive
+User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.10)
+Accept-Encoding: br,deflate,gzip,x-gzip
+
+{
+  "name": "adrian",
+  "email": "adrian@gmail.com",
+  "password": "123456",
+  "age": 25,
+  "city": "estambul",
+  "interests": ["fiesta", "lectura"],
+  "recOffers": "true",
+  "role": "user"
+}
+
+<> 2024-06-29T235410.200.json
+
+###
+
+POST http://localhost:3000/api/auth/register
+Content-Type: application/json
+Content-Length: 191
+Connection: Keep-Alive
+User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.10)
+Accept-Encoding: br,deflate,gzip,x-gzip
+
+{
+  "name": "adrian",
+  "email": "adrian@gmail.com",
+  "password": "123456",
+  "age": 25,
+  "city": "estambul",
+  "interests": ["fiesta", "lectura"],
+  "recOffers": "true",
+  "role": "user"
+}
+
+<> 2024-06-29T235136.403.html
+
+###
+
+POST http://localhost:3000/api/auth/register
+Content-Type: application/json
+Content-Length: 191
+Connection: Keep-Alive
+User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.10)
+Accept-Encoding: br,deflate,gzip,x-gzip
+
+{
+  "name": "adrian",
+  "email": "adrian@gmail.com",
+  "password": "123456",
+  "age": 25,
+  "city": "estambul",
+  "interests": ["fiesta", "lectura"],
+  "recOffers": "true",
+  "role": "user"
+}
+
+<> 2024-06-29T235037.403.html
+
+###
+
+GET http://localhost:3000/api/auth/login
+Content-Type: application/json
+Content-Length: 57
+Connection: Keep-Alive
+User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.10)
+Accept-Encoding: br,deflate,gzip,x-gzip
+
+{
+  "email": "adrian@gmail.com",
+  "password": "123456"
+}
+
+<> 2024-06-29T233710.403.html
+
+###
+

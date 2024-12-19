@@ -21,6 +21,7 @@ const tokenSign = (user, type) => {
 }
 
 const verifyToken = async (tokenJwt) => {
+    const JWT_SECRET = 'españa'
     try {
         return jwt.verify(tokenJwt, JWT_SECRET)
     } catch (err) {

@@ -1,0 +1,12 @@
+{
+  "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0eXBlIjoidXNlciIsImVtYWlsIjoieW9AZ21haWwuY29tIiwiY2lmIjpudWxsLCJyb2xlIjoiYWRtaW4iLCJpYXQiOjE3MTk3MDQyMjEsImV4cCI6MTcxOTcxMTQyMX0.UxwtL13S8RKVfkCo7Lcy5fKvAbeJqvQiPK4_fJYqBmU",
+  "user": {
+    "_id": "66473f075a88534f44b810e6",
+    "name": "carlos",
+    "email": "yo@gmail.com",
+    "age": 20,
+    "city": "londres",
+    "recOffers": false,
+    "role": "admin"
+  }
+}

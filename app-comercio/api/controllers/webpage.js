@@ -18,7 +18,7 @@ const getItems = async (req, res) => {
     try {
 
         let query = commerceModel.find();
-        console.log(req.user.role);
+        // console.log(req.user.role);
         if (req.user.role !== 'admin') {
             console.log(req.user.role);
             // Excluir el campo CIF para usuarios que no son admin
